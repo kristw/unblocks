@@ -1,7 +1,8 @@
 /* eslint-disable jest/no-test-return-statement */
 /* eslint no-console: 0 */
 import mockConsole from 'jest-mock-console';
-import { Registry, OverwritePolicy } from '../../src';
+
+import { OverwritePolicy, Registry } from '../../src';
 
 const loader = () => 'testValue';
 
@@ -151,12 +152,12 @@ describe('Registry', () => {
     it('given the key, returns a promise of item value if the item is a value', () => {
       registry.registerValue('a', 'testValue');
 
-      return registry.getAsPromise('a').then(value => expect(value).toBe('testValue'));
+      return registry.getAsPromise('a').then((value) => expect(value).toBe('testValue'));
     });
     it('given the key, returns a promise of result of the loader function if the item is a loader', () => {
       registry.registerLoader('a', () => 'testValue');
 
-      return registry.getAsPromise('a').then(value => expect(value).toBe('testValue'));
+      return registry.getAsPromise('a').then((value) => expect(value).toBe('testValue'));
     });
     it('returns same promise object for the same key unless user re-registers new value with the key.', () => {
       registry.registerLoader('a', () => 'testValue');
@@ -171,9 +172,9 @@ describe('Registry', () => {
     });
     it('If the key was registered multiple times, returns a promise of the most recent item.', () => {
       registry.registerValue('a', 'testValue');
-      const promise1 = registry.getAsPromise('a').then(value => expect(value).toBe('testValue'));
+      const promise1 = registry.getAsPromise('a').then((value) => expect(value).toBe('testValue'));
       registry.registerLoader('a', () => 'newValue');
-      const promise2 = registry.getAsPromise('a').then(value => expect(value).toBe('newValue'));
+      const promise2 = registry.getAsPromise('a').then((value) => expect(value).toBe('newValue'));
 
       return Promise.all([promise1, promise2]);
     });
@@ -196,12 +197,12 @@ describe('Registry', () => {
       registry.registerLoader('b', () => 'test2');
       registry.registerLoader('c', () => Promise.resolve('test3'));
 
-      return registry.getMapAsPromise().then(map =>
+      return registry.getMapAsPromise().then((map) =>
         expect(map).toEqual({
           a: 'test1',
           b: 'test2',
           c: 'test3',
-        }),
+        })
       );
     });
   });
@@ -255,9 +256,7 @@ describe('Registry', () => {
       registry.registerLoader('b', () => 'test2');
       registry.registerLoader('c', () => Promise.resolve('test3'));
 
-      return registry
-        .valuesAsPromise()
-        .then(entries => expect(entries).toEqual(['test1', 'test2', 'test3']));
+      return registry.valuesAsPromise().then((entries) => expect(entries).toEqual(['test1', 'test2', 'test3']));
     });
   });
 
@@ -278,12 +277,12 @@ describe('Registry', () => {
       registry.registerLoader('b', () => 'test2');
       registry.registerLoader('c', () => Promise.resolve('test3'));
 
-      return registry.entriesAsPromise().then(entries =>
+      return registry.entriesAsPromise().then((entries) =>
         expect(entries).toEqual([
           { key: 'a', value: 'test1' },
           { key: 'b', value: 'test2' },
           { key: 'c', value: 'test3' },
-        ]),
+        ])
       );
     });
   });
@@ -381,7 +380,7 @@ describe('Registry', () => {
           });
           registry.registerValue('a', 'testValue');
           expect(() => registry.registerValue('a', 'testValue2')).toThrow(
-            'Item with key "a" already exists. Cannot overwrite.',
+            'Item with key "a" already exists. Cannot overwrite.'
           );
         });
       });
@@ -392,7 +391,7 @@ describe('Registry', () => {
           });
           registry.registerLoader('a', () => 'testValue');
           expect(() => registry.registerLoader('a', () => 'testValue2')).toThrow(
-            'Item with key "a" already exists. Cannot overwrite.',
+            'Item with key "a" already exists. Cannot overwrite.'
           );
         });
       });
