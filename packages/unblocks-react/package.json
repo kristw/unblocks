@@ -1,6 +1,6 @@
 {
   "name": "@unblocks/react",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "authors": [
     "Krist Wongsuphasawat (http://kristw.yellowpigz.com)"
   ],
@@ -13,7 +13,9 @@
     "type": "git",
     "url": "git+https://github.com/kristw/unblocks.git"
   },
-  "keywords": ["react"],
+  "keywords": [
+    "react"
+  ],
   "sideEffects": false,
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
