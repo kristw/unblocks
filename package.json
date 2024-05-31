@@ -3,14 +3,15 @@
   "scripts": {
     "build": "turbo run build",
     "changeset": "changeset",
-    "check-all": "turbo run lint && turbo run typecheck && turbo run test",
+    "check-all": "turbo run build lint typecheck test",
     "clean": "turbo run clean",
     "dev": "turbo run dev",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "lint": "turbo run lint",
     "test": "turbo run test",
     "typecheck": "turbo run typecheck",
-    "publish-packages": "npm run check-all && changeset version && changeset publish"
+    "auto-release": "turbo run build && changeset publish",
+    "manual-release": "npm run check-all && changeset version && changeset publish"
   },
   "devDependencies": {
     "prettier": "^3.2.5",
