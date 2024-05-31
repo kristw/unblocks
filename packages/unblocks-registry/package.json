@@ -1,0 +1,53 @@
+{
+  "name": "@unblocks/registry",
+  "version": "0.0.0",
+  "description": "All-purpose map data structure on steroids. Successor of @encodable/registry",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "clean": "rm -rf dist",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src/",
+    "test": "jest"
+  },
+  "jest": {
+    "preset": "@unblocks/jest-presets/browser"
+  },
+  "authors": [
+    "Krist Wongsuphasawat (http://kristw.yellowpigz.com)"
+  ],
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/kristw/unblocks/issues"
+  },
+  "homepage": "https://github.com/kristw/unblocks#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kristw/unblocks.git"
+  },
+  "keywords": [
+    "encodable",
+    "registry",
+    "key-value",
+    "map",
+    "global",
+    "store"
+  ],
+  "devDependencies": {
+    "global-box": "*",
+    "jest-mock-console": "^1.0.0"
+  },
+  "peerDependencies": {
+    "global-box": "*"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
