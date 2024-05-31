@@ -1,10 +1,13 @@
-/* eslint-disable jest/no-test-return-statement */
 /* eslint no-console: 0 */
 import mockConsole from 'jest-mock-console';
 
 import { OverwritePolicy, Registry } from '../../src';
 
 const loader = () => 'testValue';
+
+function testFunc(reg: Registry<unknown>) {
+  reg.registerValue('xyz', 'testValue');
+}
 
 describe('Registry', () => {
   let registry: Registry<unknown>;
@@ -42,6 +45,16 @@ describe('Registry', () => {
     });
     it('returns the registry itself', () => {
       expect(registry.clear()).toBe(registry);
+    });
+  });
+
+  describe('.apply(func)', () => {
+    it('applies a function to the registry', () => {
+      registry.apply(testFunc);
+      expect(registry.get('xyz')).toBe('testValue');
+    });
+    it('returns the registry itself', () => {
+      expect(registry.apply(() => {})).toBe(registry);
     });
   });
 

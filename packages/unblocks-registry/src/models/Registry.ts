@@ -31,6 +31,7 @@ export default class Registry<V, L extends V | Promise<V> = V | Promise<V>> {
   /**
    * Clear all item in the registry.
    * Reset default key to initial default key (if any)
+   * @returns the registry itself
    */
   clear() {
     this.state.items = {};
@@ -41,8 +42,19 @@ export default class Registry<V, L extends V | Promise<V> = V | Promise<V>> {
   }
 
   /**
+   * Apply a function to this registry.
+   * @param func Function that takes this registry as an argument
+   * @returns the registry itself
+   */
+  apply(func: (registry: this) => void) {
+    func(this);
+    return this;
+  }
+
+  /**
    * Check if item with the given key exists
    * @param key the key to look for
+   * @returns true if the item exists, false otherwise
    */
   has(key: string) {
     const item = this.state.items[key];
@@ -54,6 +66,7 @@ export default class Registry<V, L extends V | Promise<V> = V | Promise<V>> {
    * Register key with a value
    * @param key
    * @param value
+   * @returns the registry itself
    */
   registerValue(key: string, value: V) {
     const item = this.state.items[key];
@@ -82,6 +95,7 @@ export default class Registry<V, L extends V | Promise<V> = V | Promise<V>> {
    * Register key with a loader, a function that returns a value.
    * @param key
    * @param loader
+   * @returns the registry itself
    */
   registerLoader(key: string, loader: () => L) {
     const item = this.state.items[key];
