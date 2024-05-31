@@ -1,4 +1,5 @@
-import type { AnchorHTMLAttributes, ReactNode } from "react";
+import React from 'react';
+import type { AnchorHTMLAttributes, ReactNode } from 'react';
 
 interface LinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   children: ReactNode;
@@ -6,19 +7,9 @@ interface LinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   href: string;
 }
 
-export function Link({
-  children,
-  href,
-  newTab,
-  ...other
-}: LinkProps): JSX.Element {
+export function Link({ children, href, newTab, ...other }: LinkProps): JSX.Element {
   return (
-    <a
-      href={href}
-      rel={newTab ? "noreferrer" : undefined}
-      target={newTab ? "_blank" : undefined}
-      {...other}
-    >
+    <a href={href} rel={newTab ? 'noreferrer' : undefined} target={newTab ? '_blank' : undefined} {...other}>
       {children}
     </a>
   );

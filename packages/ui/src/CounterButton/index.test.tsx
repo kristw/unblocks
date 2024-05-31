@@ -1,9 +1,11 @@
-import { createRoot } from "react-dom/client";
-import { CounterButton } from ".";
+import React from 'react';
+import { createRoot } from 'react-dom/client';
 
-describe("CounterButton", () => {
-  it("renders without crashing", () => {
-    const div = document.createElement("div");
+import { CounterButton } from '.';
+
+describe('CounterButton', () => {
+  it('renders without crashing', () => {
+    const div = document.createElement('div');
     const root = createRoot(div);
     root.render(<CounterButton />);
     root.unmount();

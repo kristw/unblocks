@@ -7,7 +7,8 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "lint": "turbo run lint",
     "test": "turbo run test",
-    "typecheck": "turbo run typecheck"
+    "typecheck": "turbo run typecheck",
+    "check-all": "turbo run lint && turbo run typecheck && turbo run test"
   },
   "devDependencies": {
     "prettier": "^3.2.5",
