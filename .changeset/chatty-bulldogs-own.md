@@ -2,4 +2,4 @@
 '@unblocks/react': patch
 ---
 
-export all components
+Initial release of `@unblocks/react` package.
