@@ -10,7 +10,7 @@
     "lint": "turbo run lint",
     "test": "turbo run test",
     "typecheck": "turbo run typecheck",
-    "publish-packages": "turbo run build lint test && changeset version && changeset publish"
+    "publish-packages": "npm run check-all && changeset version && changeset publish"
   },
   "devDependencies": {
     "prettier": "^3.2.5",
