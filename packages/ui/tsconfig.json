@@ -1,5 +1,5 @@
 {
-  "extends": "@repo/typescript-config/react-library.json",
+  "extends": "@unblocks/typescript-config/react-library.json",
   "compilerOptions": {
     "lib": ["dom", "ES2015"],
     "types": ["jest", "node"]

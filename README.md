@@ -8,13 +8,13 @@ This Monorepo includes the following packages and apps:
 
 Each package and app is 100% [TypeScript](https://www.typescriptlang.org/).
 
-- `@repo/ui`: a dummy React UI library (which contains `<CounterButton>` and `<Link>` components)
+- `@unblocks/ui`: a dummy React UI library (which contains `<CounterButton>` and `<Link>` components)
 
 ### Shared config packages
 
-- `@repo/eslint-config`: ESLint configurations used throughout the monorepo
-- `@repo/jest-presets`: Jest configurations
-- `@repo/typescript-config`: tsconfig.json's used throughout the monorepo
+- `@unblocks/eslint-config`: ESLint configurations used throughout the monorepo
+- `@unblocks/jest-presets`: Jest configurations
+- `@unblocks/typescript-config`: tsconfig.json's used throughout the monorepo
 
 ### Utilities
 
