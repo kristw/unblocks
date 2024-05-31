@@ -44,7 +44,7 @@ jobs:
         id: changesets
         uses: changesets/action@v1
         with:
-          title: "chore: update version and publish packages"
+          title: "release: update versions and publish packages"
           publish: npm run auto-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
