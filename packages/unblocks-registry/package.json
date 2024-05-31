@@ -1,6 +1,6 @@
 {
   "name": "@unblocks/registry",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "All-purpose map data structure on steroids. Successor of @encodable/registry",
   "sideEffects": false,
   "main": "./dist/index.js",
