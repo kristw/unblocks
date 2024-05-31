@@ -1,6 +1,6 @@
 {
-  "name": "@kristw-lab/unblocks-react",
-  "version": "0.0.3",
+  "name": "@unblocks/react",
+  "version": "0.0.1",
   "license": "MIT",
   "sideEffects": false,
   "main": "./dist/index.js",

@@ -8,7 +8,7 @@ This Monorepo includes the following packages and apps:
 
 Each package and app is 100% [TypeScript](https://www.typescriptlang.org/).
 
-- `@unblocks/ui`: a dummy React UI library (which contains `<CounterButton>` and `<Link>` components)
+- `@unblocks/react`: Collection of React utilities
 
 ### Shared config packages
 

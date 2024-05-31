@@ -1,4 +1,4 @@
-# @kristw-lab/unblocks-react
+# @unblocks/react
 
 ## 0.0.3
 
