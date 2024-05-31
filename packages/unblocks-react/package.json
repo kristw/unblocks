@@ -1,7 +1,19 @@
 {
   "name": "@unblocks/react",
-  "version": "0.0.1",
-  "license": "MIT",
+  "version": "0.0.0",
+  "authors": [
+    "Krist Wongsuphasawat (http://kristw.yellowpigz.com)"
+  ],
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/kristw/unblocks/issues"
+  },
+  "homepage": "https://github.com/kristw/unblocks#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kristw/unblocks.git"
+  },
+  "keywords": ["react"],
   "sideEffects": false,
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
