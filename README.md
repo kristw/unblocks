@@ -1,4 +1,4 @@
-# @unblocks monorepo
+# @unblocks/* monorepo
 
 ## What's inside?
 
@@ -9,6 +9,7 @@ This Monorepo includes the following packages and apps:
 Each package and app is 100% [TypeScript](https://www.typescriptlang.org/).
 
 - `@unblocks/react`: Collection of React utilities
+- `@unblocks/registry`: All-purpose map data structure on steroids.
 
 ### Shared config packages
 
@@ -24,3 +25,4 @@ This repo use the following dev tools:
 - [ESLint](https://eslint.org/) for code linting
 - [Jest](https://jestjs.io) test runner for all things JavaScript
 - [Prettier](https://prettier.io) for code formatting
+- [Changesets](https://github.com/changesets/changesets) for managing monorepo versioning

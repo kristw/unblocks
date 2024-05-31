@@ -12,9 +12,37 @@ All-purpose map data structure on steroids.
 ## Install
 
 ```sh
-npm install @unblocks/registry global-box
+npm install @encodable/registry global-box
 ```
 
-### Documentation
+## Example usage
 
-[See documentation and more examples here.](https://encodable.vercel.app/encodable-registry)
+Create registries
+
+```ts
+import { Registry, SyncRegistry, makeSingleton } from '@encodable/registry';
+
+// local registry (when globalId is not defined)
+const registry = new Registry<string>();
+
+// global registry
+const globalRegistry = new Registry({ globalId: 'my-global-key' });
+
+// create a singleton factory function
+const getSingleton = makeSingleton(() => new Registry({ globalId: 'my-global-key' }));
+
+```
+
+Registering
+
+```ts
+// constant value
+registry.registerValue('key', 1);
+// sync loader
+registry.registerLoader('key', () => 1);
+// async loader
+registry.registerLoader('key', () => Promise.resolve(1));
+```
+
+* `Registry` can support both constant values and sync/async loaders.
+* `SyncRegistry` only support constant values and sync loaders.
