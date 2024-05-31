@@ -10,6 +10,9 @@ concurrency: ${{ github.workflow }}-${{ github.ref }}
 jobs:
   release:
     name: Release
+    permissions:
+      contents: write
+      packages: write
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
@@ -43,7 +46,7 @@ jobs:
           title: "chore: update version and publish packages"
           publish: npm run auto-release
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Shout if a publish happens
