@@ -14,6 +14,7 @@
     "manual-release": "npm run check-all && changeset version && changeset publish"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.27.5",
     "prettier": "^3.2.5",
     "turbo": "^1.13.3"
   },
@@ -23,8 +24,5 @@
   "packageManager": "npm@10.5.2",
   "workspaces": [
     "packages/*"
-  ],
-  "dependencies": {
-    "@changesets/cli": "^2.27.5"
-  }
+  ]
 }
