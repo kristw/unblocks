@@ -1,6 +1,6 @@
 {
-  "name": "@unblocks/ui",
-  "version": "0.0.0",
+  "name": "@kristw-lab/unblocks-react",
+  "version": "0.0.1",
   "private": true,
   "license": "MIT",
   "sideEffects": false,
@@ -20,6 +20,9 @@
   },
   "jest": {
     "preset": "@unblocks/jest-presets/browser"
+  },
+  "dependencies": {
+    "react": "^18"
   },
   "devDependencies": {
     "@unblocks/eslint-config": "*",
