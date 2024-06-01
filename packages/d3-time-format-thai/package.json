@@ -1,14 +1,10 @@
 {
-  "name": "@unblocks/registry",
-  "version": "1.0.0",
-  "description": "All-purpose map data structure on steroids. Successor of @encodable/registry",
+  "name": "d3-time-format-thai",
+  "version": "0.1.1",
+  "description": "Thai locale for d3-time-format",
   "keywords": [
-    "encodable",
-    "registry",
-    "key-value",
-    "map",
-    "global",
-    "store"
+    "thai",
+    "d3-time-format"
   ],
   "authors": [
     "Krist Wongsuphasawat (http://kristw.yellowpigz.com)"
@@ -38,12 +34,8 @@
   "jest": {
     "preset": "@unblocks/jest-presets/browser"
   },
-  "devDependencies": {
-    "global-box": "*",
-    "jest-mock-console": "^1.0.0"
-  },
-  "peerDependencies": {
-    "global-box": "*"
+  "dependencies": {
+    "@visx/vendor": "^3.5.0"
   },
   "publishConfig": {
     "access": "public"
