@@ -11,7 +11,7 @@ Sometimes you have to do horrible things, like use the global object to share a 
 
 Instead of attaching values to the global object, which can lead to security concerns, this `global-box` package provides a key-value `store` which is guaranteed to be a singleton, so you can use it instead of the global object. Only code that are part of the same application bundle can access this `store`, making it more secured.
 
-### Example
+## Example
 
 package A
 
@@ -66,7 +66,7 @@ vs. in application
 }
 ```
 
-### Available functions
+## Available functions
 
 ```ts
 import { globalBox } from 'global-box';
@@ -78,10 +78,10 @@ box.remove(globalId);
 box.set(globalId);
 ```
 
-### Credits
+## Credits
 
 Inspired by [global-cache](https://github.com/ljharb/global-cache)
 
-### License
+## License
 
 Apache-2.0

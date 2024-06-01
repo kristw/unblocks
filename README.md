@@ -13,14 +13,15 @@ This monorepo includes the following:
 Each package and app is 100% [TypeScript](https://www.typescriptlang.org/).
 
 - [`@unblocks/react`](./packages//unblocks-react/): Collection of React utilities
-- [`@unblocks/registry`](./packages/unblocks-registry/): All-purpose map data structure on steroids
+- [`@unblocks/registry`](./packages/unblocks-registry/): All-purpose map data structure that can work in sync and async modes and support lazy loading.
 - [`d3-time-format-thai`](./packages/d3-time-format-thai/): `d3-time-format` with Thai locale support
+- [`global-box`](./packages/global-box/): A simple key-value store singleton
 
 ### Shared configs (for internal use)
 
-- `@unblocks/eslint-config`: ESLint configurations used throughout the monorepo
-- `@unblocks/jest-presets`: Jest configurations
-- `@unblocks/typescript-config`: tsconfig.json's used throughout the monorepo
+- [`@unblocks/eslint-config`](./packages/config-eslint/): ESLint configurations used throughout the monorepo
+- [`@unblocks/jest-presets`](./packages/jest-presets/): Jest configurations
+- [`@unblocks/typescript-config`](./packages/config-typescript/): tsconfig.json's used throughout the monorepo
 
 ## Development
 
