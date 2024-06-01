@@ -1,5 +1,7 @@
 # @unblocks
 
+[![codecov](https://codecov.io/gh/kristw/unblocks/graph/badge.svg?token=UKWMR5LJUH)](https://codecov.io/gh/kristw/unblocks)
+
 ![unblocks](./assets/unblocks_poster.png)
 
 ## What's inside?
