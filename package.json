@@ -12,10 +12,12 @@
     "test": "turbo run test",
     "typecheck": "turbo run typecheck",
     "auto-release": "turbo run build && changeset publish",
-    "manual-release": "npm run check-all && changeset version && changeset publish"
+    "manual-release": "npm run check-all && changeset version && changeset publish",
+    "prepare": "husky"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.5",
+    "husky": "^9.0.11",
     "prettier": "^3.2.5",
     "turbo": "^1.13.3"
   },
