@@ -35,8 +35,7 @@
     "preset": "@unblocks/jest-presets/browser"
   },
   "dependencies": {
-    "@types/d3-time-format": "^4.0.3",
-    "d3-time-format": "4.1.0"
+    "@visx/vendor": "^3.5.0"
   },
   "publishConfig": {
     "access": "public"

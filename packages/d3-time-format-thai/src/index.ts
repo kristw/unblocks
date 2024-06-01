@@ -1,5 +1,5 @@
-import type { TimeLocaleDefinition } from 'd3-time-format';
-import { timeFormatLocale } from 'd3-time-format';
+import type { TimeLocaleDefinition } from '@visx/vendor/d3-time-format';
+import { timeFormatLocale } from '@visx/vendor/d3-time-format';
 
 export const TimeFormats = {
   FULL_DATE: '%Aที่ %-d %B พ.ศ. %Y',
