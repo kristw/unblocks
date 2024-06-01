@@ -1,12 +1,20 @@
+# Runtime data
+pids
+*.pid
+*.seed
+
 .DS_Store
-node_modules
 .turbo
 *.log
 .next
-dist
-dist-ssr
 *.local
 .env
 .cache
+
+# Generated dir
+node_modules
 server/dist
 public/dist
+dist
+dist-ssr
+coverage/

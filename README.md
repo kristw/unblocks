@@ -1,5 +1,7 @@
 # @unblocks
 
+![unblocks](./assets/unblocks_poster.png)
+
 ## What's inside?
 
 This Monorepo includes the following packages and apps:
