@@ -6,14 +6,15 @@
 
 ## What's inside?
 
-This Monorepo includes the following packages and apps:
+This monorepo includes the following:
 
 ### Packages
 
 Each package and app is 100% [TypeScript](https://www.typescriptlang.org/).
 
-- `@unblocks/react`: Collection of React utilities
-- `@unblocks/registry`: All-purpose map data structure on steroids.
+- [`@unblocks/react`](./packages//unblocks-react/): Collection of React utilities
+- [`@unblocks/registry`](./packages/unblocks-registry/): All-purpose map data structure on steroids
+- [`d3-time-format-thai`](./packages/d3-time-format-thai/): `d3-time-format` with Thai locale support
 
 ### Shared configs (for internal use)
 
@@ -28,6 +29,27 @@ Each package and app is 100% [TypeScript](https://www.typescriptlang.org/).
 ```sh
 cd unblocks
 npm install
+```
+
+### Lint, typecheck, and test
+
+```sh
+npm run check-all
+```
+
+or
+
+```sh
+npm run lint:fix
+npm run typecheck
+npm run test
+```
+
+### Prepare changeset
+
+```sh
+npm run changeset
+# then follow the prompt
 ```
 
 ### Utilities
