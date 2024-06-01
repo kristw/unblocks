@@ -1,6 +1,6 @@
 {
   "name": "d3-time-format-thai",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "Thai locale for d3-time-format",
   "keywords": [
     "thai",
@@ -22,7 +22,9 @@
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
-  "files": ["dist/**"],
+  "files": [
+    "dist/**"
+  ],
   "scripts": {
     "build": "tsup",
     "clean": "rm -rf dist",
