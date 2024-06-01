@@ -36,7 +36,7 @@
     "test": "jest --coverage"
   },
   "jest": {
-    "preset": "@unblocks/jest-presets/node"
+    "preset": "@unblocks/jest-presets/browser"
   },
   "publishConfig": {
     "access": "public"

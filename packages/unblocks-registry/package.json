@@ -41,6 +41,9 @@
   "peerDependencies": {
     "global-box": "*"
   },
+  "devDependencies": {
+    "global-box": "*"
+  },
   "publishConfig": {
     "access": "public"
   }
