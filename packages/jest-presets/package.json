@@ -11,6 +11,7 @@
     "ts-jest": "^29.1.4"
   },
   "devDependencies": {
-    "jest-environment-jsdom": "^29.7.0"
+    "jest-environment-jsdom": "^29.7.0",
+    "jest-mock-console": "^1.0.0"
   }
 }

@@ -1,14 +1,12 @@
 {
-  "name": "@unblocks/registry",
-  "version": "1.0.0",
-  "description": "All-purpose map data structure on steroids. Successor of @encodable/registry",
+  "name": "global-box",
+  "version": "1.2.0",
+  "description": "A simple key-value store that is truly a singleton. Use this to as an alternative to sticking values into global.",
   "keywords": [
-    "encodable",
-    "registry",
-    "key-value",
-    "map",
+    "singleton",
     "global",
-    "store"
+    "key-value store",
+    "storage"
   ],
   "authors": [
     "Krist Wongsuphasawat (http://kristw.yellowpigz.com)"
@@ -26,7 +24,9 @@
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
-  "files": ["dist/**"],
+  "files": [
+    "dist/**"
+  ],
   "scripts": {
     "build": "tsup",
     "clean": "rm -rf dist",
@@ -36,10 +36,7 @@
     "test": "jest --coverage"
   },
   "jest": {
-    "preset": "@unblocks/jest-presets/browser"
-  },
-  "peerDependencies": {
-    "global-box": "*"
+    "preset": "@unblocks/jest-presets/node"
   },
   "publishConfig": {
     "access": "public"
