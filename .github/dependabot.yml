@@ -1,0 +1,31 @@
+# To get started with Dependabot version updates, you'll need to specify which
+# package ecosystems to update and where the package manifests are located.
+# Please see the documentation for all configuration options:
+# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+
+version: 2
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    groups:
+      storybook-deps:
+        dependency-type: "development"
+        patterns:
+        - "storybook"
+        - "@storybook/*"
+        - "@chakra-ui/storybook-addon"
+      eslint-deps:
+        dependency-type: "development"
+        patterns:
+        - "eslint-*"
+        - "*eslint-plugin*"
+        - "@typescript-eslint/*"
+        - "prettier"
+        - "@types/prettier"
+      jest-deps:
+        dependency-type: "development"
+        patterns:
+        - "jest*"
+        - "@types/jest"
+        - "@testing-library/*"
