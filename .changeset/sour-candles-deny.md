@@ -3,4 +3,4 @@
 '@unblocks/registry': patch
 ---
 
-Upgrade build tools and drop old node version support
+Change build tools and drop old node version support
