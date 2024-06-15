@@ -1,5 +1,13 @@
 # @unblocks/registry
 
+## 2.0.0
+
+### Patch Changes
+
+- b32b43a: Change build tools and drop old node version support
+- Updated dependencies [b32b43a]
+  - global-box@2.0.0
+
 ## 1.0.0
 
 ### Major Changes
