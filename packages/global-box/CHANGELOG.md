@@ -6,9 +6,6 @@
 
 - b32b43a: Change build tools and drop old node version support
 
-All notable changes to this project will be documented in this file.
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
-
 ## [1.2.0](https://github.com/kristw/registry/compare/global-box@1.1.1...global-box@1.2.0) (2020-08-14)
 
 ### Features
