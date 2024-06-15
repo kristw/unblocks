@@ -1,6 +1,6 @@
 {
   "name": "global-box",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "description": "A simple key-value store that is truly a singleton. Use this to as an alternative to sticking values into global.",
   "keywords": [
     "singleton",
