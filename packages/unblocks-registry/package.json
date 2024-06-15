@@ -1,6 +1,6 @@
 {
   "name": "@unblocks/registry",
-  "version": "2.0.0",
+  "version": "1.0.1",
   "description": "All-purpose map data structure on steroids. Successor of @encodable/registry",
   "keywords": [
     "encodable",
