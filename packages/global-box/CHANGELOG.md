@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.0.1
+
+### Patch Changes
+
+- 8d7b14a: Republish due to npm glitch
+
 ## 2.0.0
 
 ### Major Changes
