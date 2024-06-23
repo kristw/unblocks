@@ -46,7 +46,10 @@ npm run typecheck
 npm run test
 ```
 
-### Prepare changeset
+### Prepare release
+
+The publish process is handled by CI.
+To prepare a release, run:
 
 ```sh
 npm run changeset
