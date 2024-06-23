@@ -14,7 +14,7 @@
     "type": "git",
     "url": "git+https://github.com/kristw/unblocks.git"
   },
-  "homepage": "https://github.com/kristw/unblocks#readme",
+  "homepage": "https://github.com/kristw/unblocks/blob/main/packages/d3j-time-format-thai/README.md",
   "bugs": {
     "url": "https://github.com/kristw/unblocks/issues"
   },
