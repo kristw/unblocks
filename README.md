@@ -12,8 +12,6 @@ This monorepo includes the following:
 
 Each package and app is 100% [TypeScript](https://www.typescriptlang.org/).
 
-Sure, here is the table with an additional column showing the npm badge for each package:
-
 | Package Name | | Description |
 |--------------|-----------|-------------|
 | [`@unblocks/react`](./packages//unblocks-react/) | ![npm](https://img.shields.io/npm/v/@unblocks/react) | Collection of React utilities |
@@ -23,8 +21,6 @@ Sure, here is the table with an additional column showing the npm badge for each
 | [`global-box`](./packages/global-box/) | ![npm](https://img.shields.io/npm/v/global-box) | A simple key-value store singleton |
 
 ### Shared configs (for internal use)
-
-Sure, here is the list converted into a two-column table:
 
 | Package Name | Description |
 |--------------|-------------|
