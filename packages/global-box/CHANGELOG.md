@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.0.2
+
+### Patch Changes
+
+- 3d3cf67: Update homepage link in package.json
+
 ## 2.0.1
 
 ### Patch Changes
