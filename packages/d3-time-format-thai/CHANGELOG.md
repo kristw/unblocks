@@ -1,5 +1,11 @@
 # d3-time-format-thai
 
+## 1.0.1
+
+### Patch Changes
+
+- 3d3cf67: Update homepage link in package.json
+
 ## 1.0.0
 
 ### Major Changes
