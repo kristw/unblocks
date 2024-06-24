@@ -7,7 +7,6 @@ describe('useSvgId', () => {
     const { result } = renderHook(() => useSvgId('prefix'));
 
     const [id1, url1] = result.current;
-    console.log(id1, url1);
     expect(url1).toBe(`url(#${id1})`);
     expect(id1).toMatch(/^prefix-[A-Za-z0-9-]+$/);
   });
