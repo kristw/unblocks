@@ -13,6 +13,7 @@ This monorepo includes the following:
 Each package and app is 100% [TypeScript](https://www.typescriptlang.org/).
 
 - [`@unblocks/react`](./packages//unblocks-react/): Collection of React utilities
+- [`@unblocks/react-svg`](./packages//unblocks-react-svg/): Collection of utilities for working with SVG in React
 - [`@unblocks/registry`](./packages/unblocks-registry/): All-purpose map data structure that supports lazy loading (sync & async)
 - [`d3-time-format-thai`](./packages/d3-time-format-thai/): `d3-time-format` with Thai locale support
 - [`global-box`](./packages/global-box/): A simple key-value store singleton
