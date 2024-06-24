@@ -30,6 +30,10 @@ module.exports = {
     JSX: true,
   },
   settings: {
+    "react": {
+      fragment: "Fragment",
+      version: "detect",
+    },
     "import/resolver": {
       typescript: {
         project,
