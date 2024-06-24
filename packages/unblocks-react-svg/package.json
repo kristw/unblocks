@@ -1,8 +1,9 @@
 {
-  "name": "@unblocks/react",
-  "version": "0.0.2",
+  "name": "@unblocks/react-svg",
+  "version": "0.0.0",
   "keywords": [
-    "react"
+    "react",
+    "svg"
   ],
   "authors": [
     "Krist Wongsuphasawat (http://kristw.yellowpigz.com)"
@@ -12,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/kristw/unblocks.git"
   },
-  "homepage": "https://github.com/kristw/unblocks/blob/main/packages/unblocks-react/README.md",
+  "homepage": "https://github.com/kristw/unblocks/blob/main/packages/unblocks-react-svg/README.md",
   "bugs": {
     "url": "https://github.com/kristw/unblocks/issues"
   },
@@ -20,9 +21,7 @@
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
-  "files": [
-    "dist/**"
-  ],
+  "files": ["dist/**"],
   "scripts": {
     "build": "tsup",
     "clean": "rm -rf dist",
@@ -34,6 +33,9 @@
   "jest": {
     "preset": "@unblocks/jest-presets/browser"
   },
+  "dependencies": {
+    "uuid": "^10.0.0"
+  },
   "peerDependencies": {
     "react": "^18"
   },
@@ -42,6 +44,7 @@
     "@unblocks/jest-presets": "*",
     "@unblocks/typescript-config": "*",
     "@types/react": "^18.3.3",
+    "@types/uuid": "10.0.0",
     "react": "^18.3.1"
   },
   "publishConfig": {
