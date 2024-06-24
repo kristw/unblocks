@@ -12,17 +12,25 @@ This monorepo includes the following:
 
 Each package and app is 100% [TypeScript](https://www.typescriptlang.org/).
 
-- [`@unblocks/react`](./packages//unblocks-react/): Collection of React utilities
-- [`@unblocks/react-svg`](./packages//unblocks-react-svg/): Collection of utilities for working with SVG in React
-- [`@unblocks/registry`](./packages/unblocks-registry/): All-purpose map data structure that supports lazy loading (sync & async)
-- [`d3-time-format-thai`](./packages/d3-time-format-thai/): `d3-time-format` with Thai locale support
-- [`global-box`](./packages/global-box/): A simple key-value store singleton
+Sure, here is the table with an additional column showing the npm badge for each package:
+
+| Package Name | | Description |
+|--------------|-----------|-------------|
+| [`@unblocks/react`](./packages//unblocks-react/) | ![npm](https://img.shields.io/npm/v/@unblocks/react) | Collection of React utilities |
+| [`@unblocks/react-svg`](./packages//unblocks-react-svg/) | ![npm](https://img.shields.io/npm/v/@unblocks/react-svg) | Collection of utilities for working with SVG in React |
+| [`@unblocks/registry`](./packages/unblocks-registry/) | ![npm](https://img.shields.io/npm/v/@unblocks/registry) | All-purpose map data structure that supports lazy loading (sync & async) |
+| [`d3-time-format-thai`](./packages/d3-time-format-thai/) | ![npm](https://img.shields.io/npm/v/d3-time-format-thai) | `d3-time-format` with Thai locale support |
+| [`global-box`](./packages/global-box/) | ![npm](https://img.shields.io/npm/v/global-box) | A simple key-value store singleton |
 
 ### Shared configs (for internal use)
 
-- [`@unblocks/eslint-config`](./packages/config-eslint/): ESLint configurations used throughout the monorepo
-- [`@unblocks/jest-presets`](./packages/jest-presets/): Jest configurations
-- [`@unblocks/typescript-config`](./packages/config-typescript/): tsconfig.json's used throughout the monorepo
+Sure, here is the list converted into a two-column table:
+
+| Package Name | Description |
+|--------------|-------------|
+| [`@unblocks/eslint-config`](./packages/config-eslint/) | ESLint configurations used throughout the monorepo |
+| [`@unblocks/jest-presets`](./packages/jest-presets/) | Jest configurations |
+| [`@unblocks/typescript-config`](./packages/config-typescript/) | tsconfig.json's used throughout the monorepo |
 
 ## Development
 
