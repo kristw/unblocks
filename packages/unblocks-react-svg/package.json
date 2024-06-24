@@ -1,6 +1,6 @@
 {
   "name": "@unblocks/react-svg",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "keywords": [
     "react",
     "svg"
@@ -21,7 +21,9 @@
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
-  "files": ["dist/**"],
+  "files": [
+    "dist/**"
+  ],
   "scripts": {
     "build": "tsup",
     "clean": "rm -rf dist",
