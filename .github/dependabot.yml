@@ -6,7 +6,6 @@
 version: 2
 updates:
   - package-ecosystem: "npm"
-    directory: "/"
     schedule:
       interval: "weekly"
     groups:
@@ -22,11 +21,6 @@ updates:
         - "jest*"
         - "@types/jest"
         - "@testing-library/*"
-  - package-ecosystem: "npm"
-    directory: "/packages/config-eslint"
-    schedule:
-      interval: "weekly"
-    groups:
       eslint-deps:
         dependency-type: "development"
         patterns:
