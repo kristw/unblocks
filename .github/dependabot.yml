@@ -6,27 +6,29 @@
 version: 2
 updates:
   - package-ecosystem: "npm"
-    directory: "/"
+    directories: 
+      - "/"
+      - "/packages/config-eslint"
     schedule:
       interval: "weekly"
     groups:
       storybook-deps:
         dependency-type: "development"
         patterns:
-        - "storybook"
-        - "@storybook/*"
-        - "@chakra-ui/storybook-addon"
+          - "storybook"
+          - "@storybook/*"
+          - "@chakra-ui/storybook-addon"
       eslint-deps:
         dependency-type: "development"
         patterns:
-        - "eslint-*"
-        - "*eslint-plugin*"
-        - "@typescript-eslint/*"
-        - "prettier"
-        - "@types/prettier"
+          - "eslint-*"
+          - "*eslint-plugin*"
+          - "@typescript-eslint/*"
+          - "prettier"
+          - "@types/prettier"
       jest-deps:
         dependency-type: "development"
         patterns:
-        - "jest*"
-        - "@types/jest"
-        - "@testing-library/*"
+          - "jest*"
+          - "@types/jest"
+          - "@testing-library/*"
