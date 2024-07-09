@@ -15,12 +15,6 @@ updates:
         - "storybook"
         - "@storybook/*"
         - "@chakra-ui/storybook-addon"
-      jest-deps:
-        dependency-type: "development"
-        patterns:
-        - "jest*"
-        - "@types/jest"
-        - "@testing-library/*"
       eslint-deps:
         dependency-type: "development"
         patterns:
@@ -29,3 +23,9 @@ updates:
         - "@typescript-eslint/*"
         - "prettier"
         - "@types/prettier"
+      jest-deps:
+        dependency-type: "development"
+        patterns:
+        - "jest*"
+        - "@types/jest"
+        - "@testing-library/*"
