@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 
-import genericMemo from './genericMemo';
+import genericMemo from '../src/genericMemo';
 
 describe('genericMemo', () => {
   it('should be just memo with type', () => {
