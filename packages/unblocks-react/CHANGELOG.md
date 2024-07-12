@@ -1,5 +1,11 @@
 # @unblocks/react
 
+## 0.3.0
+
+### Minor Changes
+
+- a652fff: Fix export
+
 ## 0.2.0
 
 ### Minor Changes
