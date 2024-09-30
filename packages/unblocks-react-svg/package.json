@@ -45,7 +45,7 @@
     "@unblocks/eslint-config": "*",
     "@unblocks/jest-presets": "*",
     "@unblocks/typescript-config": "*",
-    "@types/react": "^18.3.8",
+    "@types/react": "^18.3.10",
     "@types/uuid": "10.0.0",
     "react": "^18.3.1"
   },
