@@ -1,5 +1,11 @@
 # @unblocks/react
 
+## 0.4.0
+
+### Minor Changes
+
+- d89bbd6: add RendererContainer module
+
 ## 0.3.0
 
 ### Minor Changes
