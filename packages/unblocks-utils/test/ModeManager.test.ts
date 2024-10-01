@@ -1,4 +1,4 @@
-import ModeManager from '../src/models/ModeManager';
+import ModeManager from '../src/utils/ModeManager';
 
 describe('ModeManager', () => {
   // Define some sample modes to use in tests

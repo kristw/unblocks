@@ -1,1 +1,2 @@
-export { default as ModeManager } from './models/ModeManager';
+export { default as ModeManager } from './utils/ModeManager';
+export { default as Sizer } from './utils/Sizer';

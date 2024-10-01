@@ -1,7 +1,7 @@
-import { ModeManager } from '../src';
+import { ModeManager, Sizer } from '../src';
 
 describe('index', () => {
   it('exports modules', () => {
-    [ModeManager].forEach((x) => expect(x).toBeDefined());
+    [ModeManager, Sizer].forEach((x) => expect(x).toBeDefined());
   });
 });
