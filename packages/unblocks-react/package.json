@@ -37,6 +37,9 @@
   "peerDependencies": {
     "react": "^18"
   },
+  "dependencies": {
+    "@unblocks/registry": "^1.0.2"
+  },
   "devDependencies": {
     "@unblocks/eslint-config": "*",
     "@unblocks/jest-presets": "*",
