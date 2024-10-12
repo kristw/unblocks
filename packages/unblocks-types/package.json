@@ -37,5 +37,8 @@
   },
   "jest": {
     "preset": "@unblocks/jest-presets/browser"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
