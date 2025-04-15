@@ -1,5 +1,11 @@
 # @unblocks/react
 
+## 1.0.0
+
+### Major Changes
+
+- d46f201: Support react 19
+
 ## 0.4.0
 
 ### Minor Changes
