@@ -1,0 +1,53 @@
+import type { Meta, StoryObj } from '@storybook/react';
+
+import XXX from '@/components/common/XXX';
+
+import { minimalParameters } from '../../utils';
+
+/*--------------------------------------
+ * 1. Set component and title
+ *--------------------------------------*/
+const component = XXX;
+const title = '@unblocks/ui/XXX';
+
+// Generate Storybook types
+type Component = typeof component;
+type Story = StoryObj<Component>;
+type MetaType = Meta<Component>;
+type ArgTypesType = MetaType['argTypes'];
+
+/*--------------------------------------
+ * 2. Define argTypes
+ * https://storybook.js.org/docs/api/arg-types
+ *--------------------------------------*/
+
+const argTypes: ArgTypesType = {
+  time: { control: 'date' },
+};
+
+// Export component metadata
+export default {
+  title,
+  component,
+  argTypes,
+  parameters: minimalParameters(argTypes),
+} as MetaType;
+
+/*--------------------------------------
+ * 3. (Optional) Define constants, etc.
+ *--------------------------------------*/
+
+/*--------------------------------------
+ * 4. Write the stories
+ * https://storybook.js.org/docs/writing-stories
+ *--------------------------------------*/
+
+export const Basic: Story = {
+  args: {}
+};
+
+export const Advanced: Story = {
+  render: (args) => (
+
+  )
+};

@@ -18,3 +18,4 @@ public/dist
 dist
 dist-ssr
 coverage/
+storybook-static

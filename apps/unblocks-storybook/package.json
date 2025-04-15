@@ -1,0 +1,40 @@
+{
+  "name": "@unblocks/storybook",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "storybook build --docs",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf storybook-static",
+    "lint": "eslint ./src/stories/**/*.stories.tsx --max-warnings 0",
+    "preview-storybook": "serve storybook-static",
+    "storybook": "storybook dev -p 6006"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@unblocks/xyflow-react": "*",
+    "@xyflow/react": "^12.5.5",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@unblocks/eslint-config": "*",
+    "@unblocks/typescript-config": "*",
+    "@unblocks/jest-presets": "*",
+    "@babel/core": "^7.26.10",
+    "@storybook/addon-actions": "^8.6.12",
+    "@storybook/addon-essentials": "^8.6.12",
+    "@storybook/addon-interactions": "^8.6.12",
+    "@storybook/addon-links": "^8.6.12",
+    "@storybook/nextjs": "^8.6.12",
+    "@storybook/react": "^8.6.12",
+    "@storybook/test": "^8.6.12",
+    "@storybook/theming": "^8.6.12",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "babel-loader": "^10.0.0",
+    "storybook": "^8.6.12",
+    "webpack": "^5.99.5"
+  }
+}

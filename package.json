@@ -6,6 +6,7 @@
     "check-all": "turbo run build lint typecheck test",
     "clean": "turbo run clean",
     "dev": "turbo run dev",
+    "dev:packages": "turbo run dev --filter={./packages/*}",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "lint": "turbo run lint",
     "lint:fix": "turbo run lint -- --fix",
@@ -13,7 +14,9 @@
     "typecheck": "turbo run typecheck",
     "auto-release": "turbo run build && changeset publish",
     "manual-release": "npm run check-all && changeset version && changeset publish",
-    "prepare": "husky"
+    "prepare": "husky",
+    "storybook": "concurrently -k -n storybook,packages \"turbo run storybook\" \"npm run dev:packages\"",
+    "build-storybook": "turbo run build --filter=@unblocks/storybook"
   },
   "devDependencies": {
     "@changesets/cli": "^2.28.1",
@@ -21,6 +24,7 @@
     "@testing-library/react": "^16.3.0",
     "@types/jest": "^29.5.14",
     "@types/node": "^22.13.10",
+    "concurrently": "^9.1.2",
     "husky": "^9.1.7",
     "jest": "^29.7.0",
     "prettier": "^3.5.3",
@@ -34,6 +38,7 @@
   },
   "packageManager": "npm@10.5.2",
   "workspaces": [
+    "apps/*",
     "configs/*",
     "packages/*"
   ],
