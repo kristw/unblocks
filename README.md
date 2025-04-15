@@ -19,6 +19,7 @@ Each package and app is 100% [TypeScript](https://www.typescriptlang.org/).
 | [`@unblocks/registry`](./packages/unblocks-registry/) | ![npm](https://img.shields.io/npm/v/@unblocks/registry) | All-purpose map data structure that supports lazy loading (sync & async) |
 | [`@unblocks/types`](./packages/unblocks-types/) | ![npm](https://img.shields.io/npm/v/@unblocks/types) | Useful TypeScript types |
 | [`@unblocks/utils`](./packages/unblocks-utils/) | ![npm](https://img.shields.io/npm/v/@unblocks/utils) | A collection of utility functions and classes |
+| [`@unblocks/xyflow-react`](./packages/unblocks-xyflow-react/) | ![npm](https://img.shields.io/npm/v/@unblocks/xyflow-react) | Helpers for working with `@xyflow-react` and Dagre layout |
 | [`d3-time-format-thai`](./packages/d3-time-format-thai/) | ![npm](https://img.shields.io/npm/v/d3-time-format-thai) | `d3-time-format` with Thai locale support |
 | [`global-box`](./packages/global-box/) | ![npm](https://img.shields.io/npm/v/global-box) | A simple key-value store singleton |
 
