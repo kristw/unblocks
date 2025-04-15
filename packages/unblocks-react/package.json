@@ -35,7 +35,7 @@
     "preset": "@unblocks/jest-presets/browser"
   },
   "peerDependencies": {
-    "react": "^18"
+    "react": "^18||^19"
   },
   "dependencies": {
     "@unblocks/registry": "^1.0.2"
