@@ -1,5 +1,11 @@
 # @unblocks/template
 
+## 0.2.0
+
+### Minor Changes
+
+- d08fe0b: fix export name
+
 ## 0.1.0
 
 ### Minor Changes
