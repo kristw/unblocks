@@ -12,6 +12,12 @@ export type DeepPartial<T> = {
   [K in keyof T]?: DeepPartial<T[K]>;
 };
 
+/** Make specified fields optional while leaving the remaining fields the same */
+export type PartialOnly<T, K extends keyof T> = Partial<Pick<T, K>> & Omit<T, K>;
+
+/** Make all fields optional while leaving the specified fields the same */
+export type PartialExcept<T, K extends keyof T> = Partial<Omit<T, K>> & Pick<T, K>;
+
 /**
  * Autocomplete in typescript of literal type and string
  * https://stackoverflow.com/questions/74467392/autocomplete-in-typescript-of-literal-type-and-string/74467583#74467583
