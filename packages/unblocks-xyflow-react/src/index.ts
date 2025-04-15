@@ -3,8 +3,8 @@ export { default as MultiHandle, type MultiHandleProps } from './components/Mult
 export { default as WithMultiHandle, type WithMultiHandleProps } from './components/WithMultiHandle';
 
 export { default as Graph } from './models/Graph';
-export { dagreLayout, type DagreOptions } from './models/dagreLayout';
+export { type DagreOptions } from './models/dagreLayout';
 export { createNode } from './models/createNode';
 export { createEdge } from './models/createEdge';
 
-export { type MultiHandleNodeData as GenericNodeData } from './types';
+export { type MultiHandleNodeData } from './types';
