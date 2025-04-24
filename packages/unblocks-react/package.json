@@ -1,6 +1,6 @@
 {
   "name": "@unblocks/react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "keywords": [
     "react"
   ],
@@ -38,7 +38,7 @@
     "react": "^18||^19"
   },
   "dependencies": {
-    "@unblocks/registry": "^1.0.2"
+    "@unblocks/registry": "^1.0.3"
   },
   "devDependencies": {
     "@unblocks/eslint-config": "*",
