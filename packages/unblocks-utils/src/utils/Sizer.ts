@@ -26,9 +26,9 @@ export default class Sizer<O extends readonly string[]> {
    * @param minSize minimum size allowed
    * @returns new size
    */
-  down(size: ValueOf<O>, amount: number = 1, minSize: ValueOf<O> = 'xs'): ValueOf<O> {
+  down(size: ValueOf<O>, amount: number = 1, minSize?: ValueOf<O>): ValueOf<O> {
     const index = this.indexOf(size);
-    const minIndex = this.options.indexOf(minSize);
+    const minIndex = typeof minSize !== 'undefined' ? this.options.indexOf(minSize) : 0;
 
     return this.options[Math.max(index - amount, minIndex)] as ValueOf<O>;
   }
@@ -40,9 +40,9 @@ export default class Sizer<O extends readonly string[]> {
    * @param maxSize maximum size allowed
    * @returns new size
    */
-  up(size: ValueOf<O>, amount: number = 1, maxSize: ValueOf<O> = 'xl'): ValueOf<O> {
+  up(size: ValueOf<O>, amount: number = 1, maxSize?: ValueOf<O>): ValueOf<O> {
     const index = this.indexOf(size);
-    const maxIndex = this.options.indexOf(maxSize);
+    const maxIndex = typeof maxSize !== 'undefined' ? this.options.indexOf(maxSize) : this.options.length - 1;
 
     return this.options[Math.min(index + amount, maxIndex)] as ValueOf<O>;
   }
