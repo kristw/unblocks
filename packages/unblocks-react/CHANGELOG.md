@@ -1,5 +1,13 @@
 # @unblocks/react
 
+## 1.0.1
+
+### Patch Changes
+
+- 6690e00: update docstring
+- Updated dependencies [6690e00]
+  - @unblocks/registry@1.0.3
+
 ## 1.0.0
 
 ### Major Changes

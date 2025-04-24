@@ -1,5 +1,11 @@
 # @unblocks/registry
 
+## 1.0.3
+
+### Patch Changes
+
+- 6690e00: update docstring
+
 ## 1.0.2
 
 ### Patch Changes
