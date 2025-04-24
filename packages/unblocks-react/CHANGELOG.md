@@ -4,7 +4,7 @@
 
 ### Major Changes
 
-- 1f5cac6: rename createStrictContext to createFlexibleContext
+- 1f5cac6: BREAKING: rename `createStrictContext` to `createFlexibleContext`
 
 ## 1.0.1
 
