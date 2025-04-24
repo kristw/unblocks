@@ -9,6 +9,13 @@ export interface DagreOptions {
 
 export const DEFAULT_DAGRE_OPTIONS: DagreOptions = { direction: 'LR', nodesep: 8, ranksep: 48 };
 
+/**
+ * Calculates the layout of a directed acyclic graph (DAG) using the Dagre library.
+ * @param nodes nodes
+ * @param edges edges
+ * @param options layout options
+ * @returns nodes and edges with calculated positions
+ */
 export function dagreLayout(nodes: Node[], edges: Edge[], options: DagreOptions = DEFAULT_DAGRE_OPTIONS) {
   const g = new Dagre.graphlib.Graph().setDefaultEdgeLabel(() => ({}));
   const { nodesep = 8, ranksep = 48 } = options;
