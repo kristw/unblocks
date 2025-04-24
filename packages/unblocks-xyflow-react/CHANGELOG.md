@@ -1,5 +1,11 @@
 # @unblocks/template
 
+## 0.3.0
+
+### Minor Changes
+
+- b980ee8: allow chaining on Graph object
+
 ## 0.2.0
 
 ### Minor Changes
