@@ -2,13 +2,21 @@ import { createContext, useContext } from 'react';
 
 type StoredContextType<T> = T | undefined;
 
+/**
+ * Function to check if the context is valid
+ * @param context context to check
+ * @returns True if context is valid, false otherwise
+ */
 export function defaultCheckContext<T>(context: StoredContextType<T>): context is T {
   return typeof context !== 'undefined' && context !== null && context !== '';
 }
 
 interface CreateStrictContextOptions<T> {
+  /** Name of the context for error messages */
   contextName?: string;
+  /** Tag for the provider in error messages */
   providerTag?: string;
+  /** Function to check if the context is valid */
   checkContext?: (context: StoredContextType<T>) => context is T;
 }
 
