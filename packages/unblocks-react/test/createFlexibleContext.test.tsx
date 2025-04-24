@@ -3,7 +3,7 @@ import React from 'react';
 
 import { render, renderHook } from '@testing-library/react';
 
-import createStrictContext, { defaultCheckContext } from '../src/createStrictContext';
+import createFlexibleContext, { defaultCheckContext } from '../src/createFlexibleContext';
 
 describe('defaultCheckContext', () => {
   it('returns true for valid values', () => {
@@ -19,23 +19,23 @@ describe('defaultCheckContext', () => {
   });
 });
 
-describe('createStrictContext', () => {
-  const { Context, useLooseContext, useStrictContext } = createStrictContext<string | undefined>(undefined);
+describe('createFlexibleContext', () => {
+  const { Context, useOptionalContext, useRequiredContext } = createFlexibleContext<string | undefined>(undefined);
 
-  it('useLooseContext retrieves the context value without throwing errors', () => {
-    const { result } = renderHook(() => useLooseContext());
+  it('useOptionalContext retrieves the context value without throwing errors', () => {
+    const { result } = renderHook(() => useOptionalContext());
     expect(result.current).toBeUndefined();
   });
 
-  it('useStrictContext retrieves the context value when valid', () => {
-    const { result } = renderHook(() => useStrictContext(), {
+  it('useRequiredContext retrieves the context value when valid', () => {
+    const { result } = renderHook(() => useRequiredContext(), {
       wrapper: ({ children }) => <Context.Provider value="strictValue">{children}</Context.Provider>,
     });
     expect(result.current).toBe('strictValue');
   });
 
-  it('useStrictContext throws an error when not wrapped in a Context.Provider', () => {
-    expect(() => renderHook(() => useStrictContext())).toThrow(
+  it('useRequiredContext throws an error when not wrapped in a Context.Provider', () => {
+    expect(() => renderHook(() => useRequiredContext())).toThrow(
       "Invalid context 'undefined'. Make sure this component is wrapped under <Context.Provider> with valid value."
     );
   });
@@ -50,7 +50,7 @@ describe('createStrictContext', () => {
   });
 
   function TestComponent() {
-    const value = useStrictContext();
+    const value = useRequiredContext();
     return <div>{value}</div>;
   }
 });
