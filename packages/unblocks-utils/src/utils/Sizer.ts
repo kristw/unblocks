@@ -1,5 +1,9 @@
 type ValueOf<T extends readonly string[]> = T[number];
 
+/**
+ * A generic class Sizer that manages a list of sizes (e.g. "S", "M", "L").
+ * It provides methods to get the index of a size, adjust sizes up or down.
+ */
 export default class Sizer<O extends readonly string[]> {
   public options: O;
 

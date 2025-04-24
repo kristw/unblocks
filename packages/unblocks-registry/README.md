@@ -1,7 +1,6 @@
 # @unblocks/registry
 
 [![Version](https://img.shields.io/npm/v/@unblocks/registry.svg?style=flat)](https://img.shields.io/npm/v/@unblocks/registry.svg?style=flat)
-[![David (path)](https://img.shields.io/david/kristw/unblocks.svg?path=packages%2Funblocks-registry&style=flat-square)](https://david-dm.org/kristw/unblocks?path=packages/unblocks-registry)
 
 All-purpose map data structure on steroids.
 
