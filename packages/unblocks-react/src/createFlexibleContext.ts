@@ -11,7 +11,7 @@ export function defaultCheckContext<T>(context: StoredContextType<T>): context i
   return typeof context !== 'undefined' && context !== null && context !== '';
 }
 
-interface CreateStrictContextOptions<T> {
+interface CreateFlexibleContextOptions<T> {
   /** Name of the context for error messages */
   contextName?: string;
   /** Tag for the provider in error messages */
@@ -20,9 +20,9 @@ interface CreateStrictContextOptions<T> {
   checkContext?: (context: StoredContextType<T>) => context is T;
 }
 
-export default function createStrictContext<T>(
+export default function createFlexibleContext<T>(
   defaultValue: StoredContextType<T>,
-  options: CreateStrictContextOptions<T> = {}
+  options: CreateFlexibleContextOptions<T> = {}
 ) {
   const Context = createContext(defaultValue);
   const { contextName = 'context', providerTag = 'Context.Provider', checkContext = defaultCheckContext } = options;
@@ -32,7 +32,7 @@ export default function createStrictContext<T>(
    * Do not throw but context maybe undefined, null or empty string.
    * @returns context and hasContext flag
    */
-  function useLooseContext() {
+  function useOptionalContext() {
     return useContext(Context);
   }
 
@@ -41,7 +41,7 @@ export default function createStrictContext<T>(
    * throws error if context is undefined, but exclude undefined and null from return type
    * @returns context
    */
-  function useStrictContext() {
+  function useRequiredContext() {
     const context = useContext(Context);
     if (checkContext(context)) {
       return context;
@@ -52,5 +52,5 @@ export default function createStrictContext<T>(
     );
   }
 
-  return { Context, useLooseContext, useStrictContext, checkContext };
+  return { Context, useOptionalContext, useRequiredContext, checkContext };
 }
