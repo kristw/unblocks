@@ -52,6 +52,9 @@ export default tseslint.config(
         ...globals.browser,
       },
     },
+    rules: {
+      ...pluginReact.configs.flat.recommended.rules,
+    }
   },
   pluginReactHooks.configs['recommended-latest'],
   {
@@ -71,13 +74,6 @@ export default tseslint.config(
         tsconfigRootDir: process.cwd(),
       },
     },
-    // settings: {
-    //   "import/resolver": {
-    //     typescript: {
-    //       project,
-    //     },
-    //   },
-    // },
     // add rules configurations here
     rules: {
       "@typescript-eslint/consistent-type-imports": "warn",
@@ -115,12 +111,3 @@ export default tseslint.config(
     },
   }
 );
-
-// module.exports = {
-//   settings: {
-//     "react": {
-//       fragment: "Fragment",
-//       version: "detect",
-//     },
-//   },
-// };
