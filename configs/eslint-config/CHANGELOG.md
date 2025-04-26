@@ -1,5 +1,11 @@
 # @unblocks/eslint-config
 
+## 0.2.0
+
+### Minor Changes
+
+- b8182b4: add next.js config
+
 ## 0.1.1
 
 ### Patch Changes
