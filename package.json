@@ -20,24 +20,24 @@
     "build-storybook": "turbo run build --filter=@unblocks/storybook"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.28.1",
+    "@changesets/cli": "^2.29.2",
     "@types/react-dom": "^19.1.2",
     "@testing-library/react": "^16.3.0",
     "@types/jest": "^29.5.14",
-    "@types/node": "^22.14.1",
+    "@types/node": "^22.15.2",
     "concurrently": "^9.1.2",
     "husky": "^9.1.7",
     "jest": "^29.7.0",
     "prettier": "^3.5.3",
     "react-dom": "^19.1.0",
     "tsup": "^8.4.0",
-    "turbo": "^2.4.4",
+    "turbo": "^2.5.2",
     "typescript": "^5.8.3"
   },
   "engines": {
     "node": ">=20"
   },
-  "packageManager": "npm@10.5.2",
+  "packageManager": "npm@10.9.2",
   "workspaces": [
     "apps/*",
     "configs/*",
