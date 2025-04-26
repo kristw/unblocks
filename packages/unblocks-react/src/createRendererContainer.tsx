@@ -34,10 +34,10 @@ export default function createRendererContainer<Props extends Record<string, any
 
     // Get the renderer from given key first,
     // If cannot find, use default renderer, which is guaranteed to not be undefined.
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+     
     const Renderer = reg.get(key) || reg.get()!;
 
-    // eslint-disable-next-line react/jsx-props-no-spreading
+     
     return <Renderer {...props} />;
   }
 

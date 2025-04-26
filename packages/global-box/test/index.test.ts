@@ -41,12 +41,10 @@ describe('global-box', () => {
       // manually set
       globals[COUNTER] = 1;
       expect(getStore()).toBeInstanceOf(Store);
-      // eslint-disable-next-line no-console
       expect(console.warn).toHaveBeenCalledTimes(1);
       expect(globals[COUNTER]).toEqual(2);
       expect(getStore()).toBeInstanceOf(Store);
       // check that it only warns on the first call to getStore
-      // eslint-disable-next-line no-console
       expect(console.warn).toHaveBeenCalledTimes(1);
       expect(globals[COUNTER]).toEqual(2);
     });

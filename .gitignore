@@ -19,3 +19,5 @@ dist
 dist-ssr
 coverage/
 storybook-static
+packages/*/dist
+packages/*/coverage

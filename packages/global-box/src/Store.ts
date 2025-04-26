@@ -53,7 +53,6 @@ export default class Store {
    */
   set<T>(globalId: string, value: T) {
     if (this.has(globalId)) {
-      // eslint-disable-next-line no-console
       console.warn(`Item with globalId "${globalId}" already exists. You are assigning a new value.`);
     }
     this.items[globalId] = value;

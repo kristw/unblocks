@@ -1,9 +1,8 @@
-/* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
 declare global {
   interface Window {
     __SINGLETON_STORE_COUNT__: number | undefined;
   }
+  // eslint-disable-next-line @typescript-eslint/no-namespace
   namespace NodeJS {
     interface Global {
       __SINGLETON_STORE_COUNT__: number | undefined;
