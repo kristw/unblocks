@@ -14,6 +14,7 @@ export default tseslint.config(
       "eslint.config.mjs",
       // Ignore dotfiles
       ".*.js",
+      "**/*.css",
       "node_modules/",
       "dist/",
       "coverage/",
@@ -24,6 +25,7 @@ export default tseslint.config(
   eslintConfigPrettier,
   ...eslintConfigTurbo,
   {
+    files: ["*.js?(x)", "*.ts?(x)", "*.test.ts?(x)"],
     languageOptions: {
       globals: {
         ...globals.node,
@@ -31,7 +33,6 @@ export default tseslint.config(
         JSX: true,
       }
     },
-    files: ["*.js?(x)", "*.ts?(x)", "*.test.ts?(x)"],
     settings: {
       "import/resolver": {
         typescript: {
