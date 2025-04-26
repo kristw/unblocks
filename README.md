@@ -23,7 +23,7 @@ Each package and app is 100% [TypeScript](https://www.typescriptlang.org/).
 | [`d3-time-format-thai`](./packages/d3-time-format-thai/) | ![npm](https://img.shields.io/npm/v/d3-time-format-thai) | `d3-time-format` with Thai locale support |
 | [`global-box`](./packages/global-box/) | ![npm](https://img.shields.io/npm/v/global-box) | A simple key-value store singleton |
 
-### Shared configs (for internal use)
+### Shared configs
 
 | Package Name | Description |
 |--------------|-------------|
