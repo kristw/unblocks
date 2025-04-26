@@ -1,7 +1,7 @@
 {
   "name": "@unblocks/eslint-config",
   "license": "Apache-2.0",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "dependencies": {
     "@vercel/style-guide": "^6.0.0",
     "@typescript-eslint/eslint-plugin": "^8.31.0",
