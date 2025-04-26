@@ -60,7 +60,6 @@ describe('Store', () => {
     it('sets value on existing key', () => {
       store.set('existing-key', 1245686);
       store.set('existing-key', 1566094);
-      // eslint-disable-next-line no-console
       expect(console.warn).toHaveBeenCalled();
     });
     it('returns store', () => {
