@@ -54,7 +54,12 @@ export default tseslint.config(
     },
     rules: {
       ...pluginReact.configs.flat.recommended.rules,
-    }
+    },
+    settings: {
+      react: {
+        version: "detect",
+      },
+    },
   },
   pluginReactHooks.configs['recommended-latest'],
   {
