@@ -1,5 +1,11 @@
 # @unblocks/eslint-config
 
+## 0.3.0
+
+### Minor Changes
+
+- 731bd84: migrate config to flat config
+
 ## 0.2.0
 
 ### Minor Changes
