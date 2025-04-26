@@ -1,5 +1,11 @@
 # @unblocks/eslint-config
 
+## 0.3.1
+
+### Patch Changes
+
+- 29b7372: set version for eslint-plugin-react
+
 ## 0.3.0
 
 ### Minor Changes
