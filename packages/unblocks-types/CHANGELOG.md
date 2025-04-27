@@ -1,5 +1,11 @@
 # @unblocks/types
 
+## 1.1.1
+
+### Patch Changes
+
+- a987998: include prettier plugin in eslint config
+
 ## 1.1.0
 
 ### Minor Changes
