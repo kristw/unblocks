@@ -1,7 +1,6 @@
 import 'eslint-plugin-only-warn';
 import js from '@eslint/js';
 import tseslint from 'typescript-eslint';
-import configPrettier from 'eslint-config-prettier/flat';
 import configTurbo from 'eslint-config-turbo/flat';
 import globals from 'globals';
 import pluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
@@ -23,9 +22,8 @@ export default tseslint.config(
   },
   js.configs.recommended,
   tseslint.configs.recommended,
-  configPrettier,
-  pluginPrettierRecommended,
   ...configTurbo,
+  pluginPrettierRecommended,
   {
     files: ["*.js?(x)", "*.ts?(x)", "*.test.ts?(x)"],
     languageOptions: {

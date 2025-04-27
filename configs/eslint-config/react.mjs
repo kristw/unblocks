@@ -1,132 +1,111 @@
-import { resolve } from "node:path";
+import { resolve } from 'node:path';
 import js from '@eslint/js';
 import tseslint from 'typescript-eslint';
-import configPrettier from 'eslint-config-prettier/flat';
 import configTurbo from 'eslint-config-turbo/flat';
 import globals from 'globals';
 import pluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 import pluginReact from 'eslint-plugin-react';
 import pluginReactHooks from 'eslint-plugin-react-hooks';
-import pluginSimpleImportSort from "eslint-plugin-simple-import-sort";
+import pluginSimpleImportSort from 'eslint-plugin-simple-import-sort';
 import pluginImport from 'eslint-plugin-import';
 
-const project = resolve(process.cwd(), "tsconfig.json");
-
-/*
- * This is a custom ESLint configuration for use a library
- * that utilizes React.
- */
+const project = resolve(process.cwd(), 'tsconfig.json');
 
 export default tseslint.config(
+  // Global ignores
   {
     ignores: [
-      "tsup.config.ts",
-      "eslint.config.mjs",
-      // Ignore dotfiles
-      ".*.js",
-      "**/*.css",
-      "node_modules/",
-      "dist/",
-      "coverage/",
+      'tsup.config.ts',
+      'eslint.config.mjs',
+      '.*.js',        // dotfiles
+      '**/*.css',
+      'node_modules/',
+      'dist/',
+      'coverage/',
     ],
   },
+
+  // Core configs
   js.configs.recommended,
   tseslint.configs.recommended,
-  configPrettier,
-  pluginPrettierRecommended,
   ...configTurbo,
-  {
-    files: ["*.js?(x)", "*.ts?(x)", "*.test.ts?(x)"],
-    languageOptions: {
-      globals: {
-        ...globals.node,
-        React: true,
-        JSX: true,
-      },
-    },
-  },
+  pluginPrettierRecommended,
+
+  // Import plugin
   {
     ...pluginImport.flatConfigs.recommended,
     settings: {
-      "import/resolver": {
+      'import/resolver': {
         typescript: {
           project,
         },
       },
     },
   },
+
+  // React + JSX support
   {
-    files: ['**/*.{js,mjs,cjs,jsx,mjsx,ts,tsx,mtsx}'],
-    ...pluginReact.configs.flat.recommended,
-    ...pluginReact.configs.flat['jsx-runtime'], // Add this if you are using React 17+
+    files: ['**/*.{js,jsx,cjs,mjs,ts,tsx}', "**/*.test.{js,jsx,ts,tsx}"],
     languageOptions: {
-      ...pluginReact.configs.flat.recommended.languageOptions,
-      globals: {
-        ...globals.serviceworker,
-        ...globals.browser,
-      },
-    },
-    rules: {
-      ...pluginReact.configs.flat.recommended.rules,
-    },
-    settings: {
-      react: {
-        version: "detect",
-      },
-    },
-  },
-  pluginReactHooks.configs['recommended-latest'],
-  {
-    plugins: {
-      "simple-import-sort": pluginSimpleImportSort,
-    },
-    files: ["*.js?(x)", "*.ts?(x)", "*.test.ts?(x)"],
-    languageOptions: {
-      globals: {
-        ...globals.browser,
-      },
       parserOptions: {
         ecmaFeatures: {
           jsx: true,
         },
-        projectService: true,
+        projectService: true,  // automatically handles tsconfig.json
         tsconfigRootDir: process.cwd(),
       },
+      globals: {
+        ...globals.node,
+        ...globals.browser,
+        React: true,
+        JSX: true,
+      },
     },
-    // add rules configurations here
+    settings: {
+      react: {
+        version: 'detect',
+      },
+    },
+    plugins: {
+      react: pluginReact,
+      'react-hooks': pluginReactHooks,
+      'simple-import-sort': pluginSimpleImportSort,
+    },
     rules: {
-      "@typescript-eslint/consistent-type-imports": "warn",
-      "@typescript-eslint/no-empty-function": "off",
-      // Turn this one off to use the same rule from @typescript-eslint which is more TS specific.
-      "no-unused-vars": "off",
-      "@typescript-eslint/no-unused-vars": ["warn"],
-      "@typescript-eslint/ban-ts-comment": "off",
-      "import/no-duplicates": ["error"],
-      "no-useless-rename": ["error"],
-      "object-shorthand": ["error", "always"],
-      "simple-import-sort/imports": [
-        "error",
+      // React rules (merged properly)
+      ...pluginReact.configs.flat.recommended.rules,
+      ...pluginReact.configs.flat['jsx-runtime'].rules,
+      ...pluginReactHooks.configs['recommended-latest'].rules,
+      // TypeScript
+      '@typescript-eslint/consistent-type-imports': 'warn',
+      '@typescript-eslint/no-empty-function': 'off',
+      '@typescript-eslint/no-unused-vars': ['warn'],
+      '@typescript-eslint/ban-ts-comment': 'off',
+      'no-unused-vars': 'off',
+
+      // Import
+      'import/no-duplicates': 'error',
+
+      // Code style
+      'no-useless-rename': 'error',
+      'object-shorthand': ['error', 'always'],
+
+      // Simple Import Sort
+      'simple-import-sort/imports': [
+        'error',
         {
-          "groups": [
-            // `react` first, `next` second, then packages starting with a character
-            ["^react$", "^next", "^[a-z]"],
-            // Packages starting with `@xxx`
-            ["^@[A-Za-z]"],
-            // Packages starting with `@`
-            ["^@"],
-            // Packages starting with `~`
-            ["^~"],
-            // Imports starting with `../`
-            ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
-            // Imports starting with `./`
-            ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
-            // Style imports
-            ["^.+\\.s?css$"],
-            // Side effect imports
-            ["^\\u0000"]
-          ]
-        }
-      ]
+          groups: [
+            ['^react$', '^next', '^[a-z]'],  // react, next, then normal packages
+            ['^@[A-Za-z]'],                  // @xxx
+            ['^@'],                          // @
+            ['^~'],                          // ~
+            ['^\\.\\.(?!/?$)', '^\\.\\./?$'], // ../
+            ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'], // ./
+            ['^.+\\.s?css$'],                // styles
+            ['^\\u0000'],                    // side effect imports
+          ],
+        },
+      ],
     },
   }
 );
