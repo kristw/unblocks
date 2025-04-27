@@ -2,6 +2,7 @@ import { resolve } from "node:path";
 import js from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import configPrettier from 'eslint-config-prettier/flat';
+import configTurbo from 'eslint-config-turbo/flat';
 import globals from 'globals';
 import pluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 import pluginReact from 'eslint-plugin-react';
@@ -33,6 +34,7 @@ export default tseslint.config(
   tseslint.configs.recommended,
   configPrettier,
   pluginPrettierRecommended,
+  ...configTurbo,
   {
     files: ["*.js?(x)", "*.ts?(x)", "*.test.ts?(x)"],
     languageOptions: {
