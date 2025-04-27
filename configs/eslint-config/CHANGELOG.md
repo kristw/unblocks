@@ -1,5 +1,11 @@
 # @unblocks/eslint-config
 
+## 0.5.0
+
+### Minor Changes
+
+- 3bc492d: fix configuration and enable storybook lint
+
 ## 0.4.0
 
 ### Minor Changes
