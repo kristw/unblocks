@@ -2,7 +2,9 @@ import { resolve } from "node:path";
 import js from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import configPrettier from 'eslint-config-prettier/flat';
+import configTurbo from 'eslint-config-turbo/flat';
 import globals from 'globals';
+import pluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 import pluginReact from 'eslint-plugin-react';
 import pluginReactHooks from 'eslint-plugin-react-hooks';
 import pluginSimpleImportSort from "eslint-plugin-simple-import-sort";
@@ -31,6 +33,18 @@ export default tseslint.config(
   js.configs.recommended,
   tseslint.configs.recommended,
   configPrettier,
+  pluginPrettierRecommended,
+  ...configTurbo,
+  {
+    files: ["*.js?(x)", "*.ts?(x)", "*.test.ts?(x)"],
+    languageOptions: {
+      globals: {
+        ...globals.node,
+        React: true,
+        JSX: true,
+      },
+    },
+  },
   {
     ...pluginImport.flatConfigs.recommended,
     settings: {
