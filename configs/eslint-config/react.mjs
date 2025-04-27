@@ -3,11 +3,12 @@ import js from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import configTurbo from 'eslint-config-turbo/flat';
 import globals from 'globals';
+import pluginImport from 'eslint-plugin-import';
 import pluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 import pluginReact from 'eslint-plugin-react';
 import pluginReactHooks from 'eslint-plugin-react-hooks';
 import pluginSimpleImportSort from 'eslint-plugin-simple-import-sort';
-import pluginImport from 'eslint-plugin-import';
+import pluginStorybook from 'eslint-plugin-storybook'
 
 const project = resolve(process.cwd(), 'tsconfig.json');
 
@@ -22,6 +23,7 @@ export default tseslint.config(
       'node_modules/',
       'dist/',
       'coverage/',
+      '!.storybook', // allow storybook
     ],
   },
 
@@ -29,8 +31,8 @@ export default tseslint.config(
   js.configs.recommended,
   tseslint.configs.recommended,
   ...configTurbo,
+  ...pluginStorybook.configs['flat/recommended'],
   pluginPrettierRecommended,
-
   // Import plugin
   {
     ...pluginImport.flatConfigs.recommended,
