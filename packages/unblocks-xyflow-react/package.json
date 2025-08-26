@@ -41,7 +41,7 @@
     "@dagrejs/dagre": "^1.1.4"
   },
   "peerDependencies": {
-    "@xyflow/react": "^12.5.5",
+    "@xyflow/react": "^12.8.4",
     "react": "^18 || ^19"
   },
   "devDependencies": {
@@ -50,7 +50,7 @@
     "@unblocks/types": "*",
     "@unblocks/typescript-config": "*",
     "@types/react": "^19.1.8",
-    "@xyflow/react": "^12.5.5",
+    "@xyflow/react": "^12.8.4",
     "react": "^19.0.0"
   },
   "publishConfig": {
