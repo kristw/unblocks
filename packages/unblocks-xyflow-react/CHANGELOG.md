@@ -1,5 +1,11 @@
 # @unblocks/template
 
+## 0.4.0
+
+### Minor Changes
+
+- 2fde951: make dagreflow accepts other reactflow props
+
 ## 0.3.1
 
 ### Patch Changes
