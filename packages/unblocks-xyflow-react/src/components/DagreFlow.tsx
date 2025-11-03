@@ -1,23 +1,29 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 
-import type { Node, ReactFlowProps } from '@xyflow/react';
+import type { Edge, Node, ReactFlowProps } from '@xyflow/react';
 import { Background, Controls, ReactFlow, useNodesInitialized, useNodesState, useReactFlow } from '@xyflow/react';
 
 import type { DagreOptions } from '../models/dagreLayout';
 import { dagreLayout } from '../models/dagreLayout';
 import type Graph from '../models/Graph';
 
-export type DagreFlowProps = {
+export type DagreFlowProps<NodeType extends Node = Node, EdgeType extends Edge = Edge> = {
   graph: Graph;
-  nodeTypes?: ReactFlowProps['nodeTypes'];
   dagreOptions?: DagreOptions;
-};
+} & Omit<ReactFlowProps<NodeType, EdgeType>, 'nodes' | 'edges' | 'onNodesChange'>;
 
 const OPTIONS = {
   includeHiddenNodes: false,
 };
 
-export default function DagreFlow({ graph, dagreOptions, ...restProps }: DagreFlowProps) {
+const DEFAULT_CHILDREN = (
+  <>
+    <Background />
+    <Controls />
+  </>
+);
+
+export default function DagreFlow({ graph, dagreOptions, children, ...restProps }: DagreFlowProps) {
   const nodesInitialized = useNodesInitialized(OPTIONS);
   const { fitView } = useReactFlow();
   const [nodes, setNodes, onNodesChange] = useNodesState(graph.nodes);
@@ -51,8 +57,7 @@ export default function DagreFlow({ graph, dagreOptions, ...restProps }: DagreFl
 
   return (
     <ReactFlow nodes={layoutedNodes} edges={allEdges} onNodesChange={onNodesChange} fitView {...restProps}>
-      <Background />
-      <Controls />
+      {typeof children === 'undefined' ? DEFAULT_CHILDREN : children}
     </ReactFlow>
   );
 }
