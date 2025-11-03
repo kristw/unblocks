@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@unblocks/xyflow-react": "*",
-    "@xyflow/react": "^12.5.5",
+    "@xyflow/react": "^12.9.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
