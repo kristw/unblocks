@@ -23,18 +23,16 @@
     "@unblocks/typescript-config": "*",
     "@unblocks/jest-presets": "*",
     "@babel/core": "^7.28.4",
-    "@storybook/addon-actions": "^8.6.14",
-    "@storybook/addon-essentials": "^8.6.14",
-    "@storybook/addon-interactions": "^8.6.14",
-    "@storybook/addon-links": "^8.6.14",
-    "@storybook/nextjs": "^8.6.14",
-    "@storybook/react": "^8.6.14",
+    "@storybook/addon-links": "^10.1.2",
+    "@storybook/nextjs": "^10.1.2",
+    "@storybook/react": "^10.1.2",
     "@storybook/test": "^8.6.12",
     "@storybook/theming": "^8.6.12",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
     "babel-loader": "^10.0.0",
-    "storybook": "^8.6.12",
-    "webpack": "^5.101.0"
+    "storybook": "^10.1.2",
+    "webpack": "^5.101.0",
+    "@storybook/addon-docs": "^10.1.2"
   }
 }

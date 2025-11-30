@@ -15,4 +15,6 @@ export default {
       <Story />
     ),
   ],
+
+  tags: ['autodocs']
 };
