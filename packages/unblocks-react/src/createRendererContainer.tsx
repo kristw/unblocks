@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 
 import RenderRegistry from './RenderRegistry';
 
@@ -34,8 +34,7 @@ export default function createRendererContainer<Props extends Record<string, any
 
     // Get the renderer from given key first,
     // If cannot find, use default renderer, which is guaranteed to not be undefined.
-
-    const Renderer = reg.get(key) || reg.get()!;
+    const Renderer = useMemo(() => reg.get(key) || reg.get()!, [key, reg]);
 
     return <Renderer {...props} />;
   }
