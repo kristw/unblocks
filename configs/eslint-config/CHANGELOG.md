@@ -1,5 +1,11 @@
 # @unblocks/eslint-config
 
+## 1.0.0
+
+### Major Changes
+
+- 145ab32: major bump storybook config
+
 ## 0.5.0
 
 ### Minor Changes

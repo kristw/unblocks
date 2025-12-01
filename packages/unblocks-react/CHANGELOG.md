@@ -1,5 +1,11 @@
 # @unblocks/react
 
+## 2.0.3
+
+### Patch Changes
+
+- 145ab32: add usememo
+
 ## 2.0.2
 
 ### Patch Changes
