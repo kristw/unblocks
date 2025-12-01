@@ -36,6 +36,7 @@ export default function createRendererContainer<Props extends Record<string, any
     // If cannot find, use default renderer, which is guaranteed to not be undefined.
     const Renderer = useMemo(() => reg.get(key) || reg.get()!, [key, reg]);
 
+    // eslint-disable-next-line react-hooks/static-components
     return <Renderer {...props} />;
   }
 
