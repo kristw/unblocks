@@ -19,7 +19,7 @@ describe('ModeManager', () => {
       const modeManager = new ModeManager(modes);
 
       // Invalid mode name
-      expect(() => modeManager.getIndex('invalidMode')).toThrowError('Invalid mode name: invalidMode');
+      expect(() => modeManager.getIndex('invalidMode')).toThrow('Invalid mode name: invalidMode');
     });
   });
   describe('.getMode(index)', () => {
@@ -30,7 +30,7 @@ describe('ModeManager', () => {
       const modeManager = new ModeManager(modes);
 
       // Invalid index
-      expect(() => modeManager.getMode(5)).toThrowError('Invalid index: 5');
+      expect(() => modeManager.getMode(5)).toThrow('Invalid index: 5');
     });
   });
 });
