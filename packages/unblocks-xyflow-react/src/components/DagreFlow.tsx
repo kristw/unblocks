@@ -31,6 +31,7 @@ export default function DagreFlow({ graph, dagreOptions, children, ...restProps 
   const isInitialized = useRef(false);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setLayoutedNodes(graph.nodes);
     setNodes(graph.nodes);
   }, [graph, setNodes]);
@@ -39,6 +40,7 @@ export default function DagreFlow({ graph, dagreOptions, children, ...restProps 
     if (nodesInitialized) {
       if (!isInitialized.current) {
         const newNodes = dagreLayout(nodes, graph.edges, dagreOptions).nodes;
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setLayoutedNodes(newNodes.concat());
         isInitialized.current = true;
       }
