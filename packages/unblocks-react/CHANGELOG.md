@@ -1,5 +1,11 @@
 # @unblocks/react
 
+## 2.2.0
+
+### Minor Changes
+
+- 2f56722: add common hooks
+
 ## 2.1.0
 
 ### Minor Changes
