@@ -4,7 +4,7 @@
 
 ### Patch Changes
 
-- 145ab32: add usememo
+- 145ab32: add useMemo
 
 ## 2.0.2
 
