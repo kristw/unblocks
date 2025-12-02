@@ -1,5 +1,11 @@
 # @unblocks/react
 
+## 2.1.0
+
+### Minor Changes
+
+- 1fae672: add composeProvider
+
 ## 2.0.3
 
 ### Patch Changes
