@@ -1,5 +1,11 @@
 # @unblocks/react
 
+## 2.3.0
+
+### Minor Changes
+
+- f8cf6af: add createConstantProvider
+
 ## 2.2.1
 
 ### Patch Changes
