@@ -1,8 +1,8 @@
 import React from 'react';
 
-import itemFinder from '../src/itemFinder';
+import createFinder from '../src/createFinder';
 
-describe('itemFinder', () => {
+describe('createFinder', () => {
   type TestProps = {
     id: string;
     type: string;
@@ -17,7 +17,7 @@ describe('itemFinder', () => {
 
   describe('with string key', () => {
     it('should find item by string key from props', () => {
-      const finder = itemFinder<TestProps, (typeof itemsByKey)['item1']>({
+      const finder = createFinder<TestProps, (typeof itemsByKey)['item1']>({
         key: 'id',
         itemsByKey,
       });
@@ -28,7 +28,7 @@ describe('itemFinder', () => {
     });
 
     it('should return undefined when key not found', () => {
-      const finder = itemFinder<TestProps, (typeof itemsByKey)['item1']>({
+      const finder = createFinder<TestProps, (typeof itemsByKey)['item1']>({
         key: 'id',
         itemsByKey,
       });
@@ -40,7 +40,7 @@ describe('itemFinder', () => {
 
     it('should return default value when key not found', () => {
       const defaultValue = { name: 'Default', data: 'default' };
-      const finder = itemFinder<TestProps, (typeof itemsByKey)['item1']>({
+      const finder = createFinder<TestProps, (typeof itemsByKey)['item1']>({
         key: 'id',
         itemsByKey,
         defaultValue,
@@ -52,7 +52,7 @@ describe('itemFinder', () => {
     });
 
     it('should find different items based on different key values', () => {
-      const finder = itemFinder<TestProps, (typeof itemsByKey)['item1']>({
+      const finder = createFinder<TestProps, (typeof itemsByKey)['item1']>({
         key: 'id',
         itemsByKey,
       });
@@ -63,12 +63,12 @@ describe('itemFinder', () => {
     });
 
     it('should use different prop fields as key', () => {
-      const finderById = itemFinder<TestProps, (typeof itemsByKey)['item1']>({
+      const finderById = createFinder<TestProps, (typeof itemsByKey)['item1']>({
         key: 'id',
         itemsByKey,
       });
 
-      const finderByType = itemFinder<TestProps, (typeof itemsByKey)['item1']>({
+      const finderByType = createFinder<TestProps, (typeof itemsByKey)['item1']>({
         key: 'type',
         itemsByKey,
       });
@@ -80,7 +80,7 @@ describe('itemFinder', () => {
 
   describe('with function key', () => {
     it('should find item using function to derive key', () => {
-      const finder = itemFinder<TestProps, (typeof itemsByKey)['item1']>({
+      const finder = createFinder<TestProps, (typeof itemsByKey)['item1']>({
         key: (props) => props.id,
         itemsByKey,
       });
@@ -91,7 +91,7 @@ describe('itemFinder', () => {
     });
 
     it('should derive key from multiple props', () => {
-      const finder = itemFinder<TestProps, (typeof itemsByKey)['item1']>({
+      const finder = createFinder<TestProps, (typeof itemsByKey)['item1']>({
         key: (props) => `${props.type}${props.value}`,
         itemsByKey: {
           test1: { name: 'Test 1', data: 't1' },
@@ -104,7 +104,7 @@ describe('itemFinder', () => {
     });
 
     it('should return undefined when derived key not found', () => {
-      const finder = itemFinder<TestProps, (typeof itemsByKey)['item1']>({
+      const finder = createFinder<TestProps, (typeof itemsByKey)['item1']>({
         key: (props) => props.id,
         itemsByKey,
       });
@@ -116,7 +116,7 @@ describe('itemFinder', () => {
 
     it('should return default value when derived key not found', () => {
       const defaultValue = { name: 'Default', data: 'default' };
-      const finder = itemFinder<TestProps, (typeof itemsByKey)['item1']>({
+      const finder = createFinder<TestProps, (typeof itemsByKey)['item1']>({
         key: (props) => props.id,
         itemsByKey,
         defaultValue,
@@ -128,7 +128,7 @@ describe('itemFinder', () => {
     });
 
     it('should support complex key derivation logic', () => {
-      const finder = itemFinder<TestProps, (typeof itemsByKey)['item1']>({
+      const finder = createFinder<TestProps, (typeof itemsByKey)['item1']>({
         key: (props) => (props.value > 5 ? 'item1' : 'item2'),
         itemsByKey,
       });
@@ -146,7 +146,7 @@ describe('itemFinder', () => {
         three: 3,
       };
 
-      const finder = itemFinder<TestProps, number>({
+      const finder = createFinder<TestProps, number>({
         key: 'id',
         itemsByKey: numbersByKey,
       });
@@ -164,7 +164,7 @@ describe('itemFinder', () => {
         func2: fn2,
       };
 
-      const finder = itemFinder<TestProps, () => string>({
+      const finder = createFinder<TestProps, () => string>({
         key: 'id',
         itemsByKey: functionsByKey,
       });
@@ -184,7 +184,7 @@ describe('itemFinder', () => {
         arr2: [4, 5, 6],
       };
 
-      const finder = itemFinder<TestProps, number[]>({
+      const finder = createFinder<TestProps, number[]>({
         key: 'id',
         itemsByKey: arraysByKey,
       });
@@ -206,7 +206,7 @@ describe('itemFinder', () => {
         comp2: Comp2,
       };
 
-      const finder = itemFinder<TestProps, ComponentType>({
+      const finder = createFinder<TestProps, ComponentType>({
         key: 'id',
         itemsByKey: componentsByKey,
       });
@@ -218,7 +218,7 @@ describe('itemFinder', () => {
 
   describe('edge cases', () => {
     it('should handle empty itemsByKey', () => {
-      const finder = itemFinder<TestProps, string>({
+      const finder = createFinder<TestProps, string>({
         key: 'id',
         itemsByKey: {},
       });
@@ -228,7 +228,7 @@ describe('itemFinder', () => {
 
     it('should handle empty itemsByKey with default value', () => {
       const defaultValue = 'default';
-      const finder = itemFinder<TestProps, string>({
+      const finder = createFinder<TestProps, string>({
         key: 'id',
         itemsByKey: {},
         defaultValue,
@@ -241,7 +241,7 @@ describe('itemFinder', () => {
       const defaultValue = { name: 'Default', data: 'default' };
       const actualItem = { name: 'Item 1', data: 'data1' };
 
-      const finder = itemFinder<TestProps, typeof actualItem>({
+      const finder = createFinder<TestProps, typeof actualItem>({
         key: 'id',
         itemsByKey: { item1: actualItem },
         defaultValue,
@@ -252,7 +252,7 @@ describe('itemFinder', () => {
     });
 
     it('should handle numeric string keys', () => {
-      const finder = itemFinder<TestProps, string>({
+      const finder = createFinder<TestProps, string>({
         key: 'value',
         itemsByKey: {
           '1': 'one',
@@ -266,7 +266,7 @@ describe('itemFinder', () => {
     });
 
     it('should be reusable across multiple calls', () => {
-      const finder = itemFinder<TestProps, (typeof itemsByKey)['item1']>({
+      const finder = createFinder<TestProps, (typeof itemsByKey)['item1']>({
         key: 'id',
         itemsByKey,
       });
@@ -279,7 +279,7 @@ describe('itemFinder', () => {
     });
 
     it('should handle null or undefined values in itemsByKey', () => {
-      const finder = itemFinder<TestProps, string | null | undefined>({
+      const finder = createFinder<TestProps, string | null | undefined>({
         key: 'id',
         itemsByKey: {
           // eslint-disable-next-line @typescript-eslint/no-explicit-any

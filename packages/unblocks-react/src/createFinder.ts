@@ -1,4 +1,4 @@
-export default function itemFinder<Props extends Record<string, unknown>, ItemType>({
+export default function createFinder<Props extends Record<string, unknown>, ItemType>({
   key,
   itemsByKey,
   defaultValue,

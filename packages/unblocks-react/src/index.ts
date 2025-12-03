@@ -13,5 +13,5 @@ export {
 } from './createDynamicRenderer';
 export { default as createFlexibleContext } from './createFlexibleContext';
 export { default as createRendererContainer } from './createRendererContainer';
-export { default as itemFinder } from './itemFinder';
+export { default as createFinder } from './createFinder';
 export { default as RenderRegistry } from './RenderRegistry';
