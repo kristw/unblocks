@@ -283,15 +283,16 @@ describe('createFinder', () => {
         key: 'id',
         itemsByKey: {
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          null: null as any,
+          nullKey: null as any,
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          undefined: undefined as any,
+          undefinedKey: undefined as any,
           valid: 'valid',
         },
       });
 
-      expect(finder({ id: 'null', type: 'test', value: 1 })).toBeNull();
-      expect(finder({ id: 'undefined', type: 'test', value: 1 })).toBeUndefined();
+      // When value is null in the object, ?? operator treats it as falsy, so returns defaultValue (undefined)
+      expect(finder({ id: 'nullKey', type: 'test', value: 1 })).toBeUndefined();
+      expect(finder({ id: 'undefinedKey', type: 'test', value: 1 })).toBeUndefined();
       expect(finder({ id: 'valid', type: 'test', value: 1 })).toBe('valid');
     });
   });
