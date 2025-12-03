@@ -1,5 +1,7 @@
-import React, { memo } from 'react';
+import React from 'react';
 import type { Context, ReactNode } from 'react';
+
+import genericMemo from './genericMemo';
 
 /**
  * Creates a constant provider for the given context and value.
@@ -12,5 +14,5 @@ export default function createConstantProvider<T>(Context: Context<T>, value: T)
     return <Context.Provider value={value}>{children}</Context.Provider>;
   }
 
-  return memo(ConstantProvider);
+  return genericMemo(ConstantProvider);
 }
