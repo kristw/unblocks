@@ -1,5 +1,12 @@
 import { useCallback, useState } from 'react';
 
+/**
+ * React hook for managing pagination state.
+ * @param itemsCount Total number of items.
+ * @param initialPage Initial page number.
+ * @param initialPageSize Initial number of items per page.
+ * @returns An object containing pagination state and helper functions.
+ */
 export default function usePagination(itemsCount: number, initialPage = 1, initialPageSize = 10) {
   const [page, setPage] = useState(initialPage);
   const [pageSize, setPageSize] = useState(initialPageSize);

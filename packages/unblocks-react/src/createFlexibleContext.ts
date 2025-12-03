@@ -1,5 +1,7 @@
 import { createContext, useContext } from 'react';
 
+import createConstantProvider from './createConstantProvider';
+
 type StoredContextType<T> = T | undefined;
 
 /**
@@ -20,6 +22,12 @@ interface CreateFlexibleContextOptions<T> {
   checkContext?: (context: StoredContextType<T>) => context is T;
 }
 
+/**
+ * Creates a flexible context with optional and required hooks, and a constant provider creator.
+ * @param defaultValue
+ * @param options
+ * @returns An object containing the context, hooks, and provider creator.
+ */
 export default function createFlexibleContext<T>(
   defaultValue: StoredContextType<T>,
   options: CreateFlexibleContextOptions<T> = {}
@@ -52,5 +60,20 @@ export default function createFlexibleContext<T>(
     );
   }
 
-  return { Context, useOptionalContext, useRequiredContext, checkContext };
+  /**
+   * Creates a constant provider for the context
+   * @param value
+   * @returns Constant provider component
+   */
+  function _createConstantProvider(value: T) {
+    return createConstantProvider(Context, value);
+  }
+
+  return {
+    Context,
+    useOptionalContext,
+    useRequiredContext,
+    checkContext,
+    createConstantProvider: _createConstantProvider,
+  };
 }

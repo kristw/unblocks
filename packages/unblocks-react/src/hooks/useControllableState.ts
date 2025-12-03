@@ -10,6 +10,13 @@ type ControllableState<T> = {
   onChange?: (value: T) => void;
 };
 
+/**
+ * React hook that manages a state which can be either controlled or uncontrolled.
+ * @param value Controlled value
+ * @param defaultValue Default value for uncontrolled state
+ * @param onChange Callback when the value changes
+ * @returns A tuple containing the current state and a setter function.
+ */
 function useControllableState<T>({
   value,
   defaultValue,
