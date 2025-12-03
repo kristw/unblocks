@@ -7,7 +7,7 @@ export type DynamicRendererContextType<Props> = {
   getRenderer: (props: Props) => ComponentType<Props> | undefined;
 };
 
-export type CreateDynamicRenderOptions<Props> = {
+export type CreateDynamicRendererOptions<Props> = {
   contextName: string;
   DefaultRenderer?: ComponentType<Props>;
 };
@@ -21,7 +21,7 @@ export type CreateDynamicRenderOptions<Props> = {
 export default function createDynamicRenderer<Props extends Record<string, unknown>>({
   contextName,
   DefaultRenderer,
-}: CreateDynamicRenderOptions<Props>) {
+}: CreateDynamicRendererOptions<Props>) {
   type ContextType = DynamicRendererContextType<Props>;
   const { Context, useRequiredContext, createConstantProvider } = createFlexibleContext<ContextType>(undefined, {
     contextName,
