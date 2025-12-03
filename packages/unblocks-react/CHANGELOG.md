@@ -1,5 +1,11 @@
 # @unblocks/react
 
+## 2.2.1
+
+### Patch Changes
+
+- 1a30de1: rename composeProvider to composeProviders
+
 ## 2.2.0
 
 ### Minor Changes
