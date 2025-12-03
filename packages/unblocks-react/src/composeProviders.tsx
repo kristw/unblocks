@@ -8,7 +8,7 @@ export type ProviderProps = { children: ReactNode };
  * @param providers Array of provider components. The first provider in the array will be the outermost provider.
  * @returns Composed provider component
  */
-export default function composeProvider(providers: React.ComponentType<ProviderProps>[]) {
+export default function composeProviders(providers: React.ComponentType<ProviderProps>[]) {
   return providers.reduceRight(
     (Acc, Provider) => {
       return function ComposedProvider(props: ProviderProps) {
