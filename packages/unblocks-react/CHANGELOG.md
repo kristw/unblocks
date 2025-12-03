@@ -1,5 +1,11 @@
 # @unblocks/react
 
+## 2.5.0
+
+### Minor Changes
+
+- 4fa2f26: add createDynamicRenderer
+
 ## 2.4.0
 
 ### Minor Changes
