@@ -11,7 +11,7 @@ export {
   type DynamicRendererContextType,
   type CreateDynamicRendererOptions,
 } from './createDynamicRenderer';
+export { default as createFinder } from './createFinder';
 export { default as createFlexibleContext } from './createFlexibleContext';
 export { default as createRendererContainer } from './createRendererContainer';
-export { default as createFinder } from './createFinder';
 export { default as RenderRegistry } from './RenderRegistry';
