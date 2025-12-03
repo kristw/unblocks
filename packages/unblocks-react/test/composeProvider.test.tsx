@@ -2,12 +2,12 @@ import React, { createContext, useContext } from 'react';
 
 import { render, screen } from '@testing-library/react';
 
-import type { ProviderProps } from '../src/composeProvider';
-import composeProvider from '../src/composeProvider';
+import type { ProviderProps } from '../src/composeProviders';
+import composeProviders from '../src/composeProviders';
 
-describe('composeProvider', () => {
+describe('composeProviders', () => {
   it('should return a provider component when given an empty array', () => {
-    const ComposedProvider = composeProvider([]);
+    const ComposedProvider = composeProviders([]);
     const { getByText } = render(
       <ComposedProvider>
         <div>Test Content</div>
@@ -22,7 +22,7 @@ describe('composeProvider', () => {
       <TestContext.Provider value="test-value">{children}</TestContext.Provider>
     );
 
-    const ComposedProvider = composeProvider([TestProvider]);
+    const ComposedProvider = composeProviders([TestProvider]);
 
     const TestComponent = () => {
       const value = useContext(TestContext);
@@ -47,7 +47,7 @@ describe('composeProvider', () => {
     const Provider2 = ({ children }: ProviderProps) => <Context2.Provider value="value2">{children}</Context2.Provider>;
     const Provider3 = ({ children }: ProviderProps) => <Context3.Provider value="value3">{children}</Context3.Provider>;
 
-    const ComposedProvider = composeProvider([Provider1, Provider2, Provider3]);
+    const ComposedProvider = composeProviders([Provider1, Provider2, Provider3]);
 
     const TestComponent = () => {
       const value1 = useContext(Context1);
@@ -82,7 +82,7 @@ describe('composeProvider', () => {
       return <OrderContext.Provider value={[...existing, 'inner']}>{children}</OrderContext.Provider>;
     };
 
-    const ComposedProvider = composeProvider([OuterProvider, InnerProvider]);
+    const ComposedProvider = composeProviders([OuterProvider, InnerProvider]);
 
     const TestComponent = () => {
       const order = useContext(OrderContext);
@@ -106,7 +106,7 @@ describe('composeProvider', () => {
       <TestContext.Provider value="provided">{children}</TestContext.Provider>
     );
 
-    const ComposedProvider = composeProvider([TestProvider]);
+    const ComposedProvider = composeProviders([TestProvider]);
 
     const TestComponent = () => {
       const value = useContext(TestContext);
@@ -143,7 +143,7 @@ describe('composeProvider', () => {
       <UserContext.Provider value="authenticated">{children}</UserContext.Provider>
     );
 
-    const ComposedProvider = composeProvider([ThemeProvider, UserProvider]);
+    const ComposedProvider = composeProviders([ThemeProvider, UserProvider]);
 
     const TestComponent = () => {
       const theme = useContext(ThemeContext);
@@ -183,7 +183,7 @@ describe('composeProvider', () => {
       return <>{children}</>;
     };
 
-    const ComposedProvider = composeProvider([Provider1, Provider2]);
+    const ComposedProvider = composeProviders([Provider1, Provider2]);
 
     const { getByText } = render(
       <ComposedProvider>
@@ -202,7 +202,7 @@ describe('composeProvider', () => {
       <TestContext.Provider value="reusable">{children}</TestContext.Provider>
     );
 
-    const ComposedProvider = composeProvider([TestProvider]);
+    const ComposedProvider = composeProviders([TestProvider]);
 
     const TestComponent = () => {
       const value = useContext(TestContext);
