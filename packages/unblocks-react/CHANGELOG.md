@@ -1,5 +1,11 @@
 # @unblocks/react
 
+## 2.4.0
+
+### Minor Changes
+
+- a8768df: make createFlexibleContext also returns createConstantProvider
+
 ## 2.3.0
 
 ### Minor Changes
