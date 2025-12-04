@@ -1,5 +1,11 @@
 # @unblocks/react
 
+## 2.5.1
+
+### Patch Changes
+
+- b9ca4fb: allow dynamic renderer to transform props
+
 ## 2.5.0
 
 ### Minor Changes
