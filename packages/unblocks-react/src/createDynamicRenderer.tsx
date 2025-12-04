@@ -16,6 +16,7 @@ export type CreateDynamicRendererOptions<Props, TransformedProps = Props> = {
 /**
  * Creates a dynamic renderer component that selects a renderer based on context.
  * @param contextName Name of the context for error messages
+ * @param transformProps Function to transform props before passing to the renderer
  * @param DefaultRenderer Default renderer component if none is found in context
  * @returns An object containing the context, dynamic renderer component, and constant provider creator.
  */
