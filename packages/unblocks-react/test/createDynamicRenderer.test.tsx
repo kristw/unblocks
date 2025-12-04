@@ -289,4 +289,127 @@ describe('createDynamicRenderer', () => {
       "Invalid CustomDynamic 'undefined'. Make sure this component is wrapped under <CustomDynamicContext.Provider> with valid value."
     );
   });
+
+  describe('transformProps', () => {
+    it('should transform props before passing to renderer', () => {
+      type OriginalProps = { firstName: string; lastName: string };
+      type TransformedProps = { fullName: string };
+
+      const TransformedRenderer = ({ fullName }: TransformedProps) => <div>Name: {fullName}</div>;
+
+      const { Context, DynamicRenderer } = createDynamicRenderer<OriginalProps, TransformedProps>({
+        contextName: 'Transform',
+        transformProps: (props) => ({ fullName: `${props.firstName} ${props.lastName}` }),
+      });
+
+      const getRenderer = () => TransformedRenderer;
+
+      const { getByText } = render(
+        <Context.Provider value={{ getRenderer }}>
+          <DynamicRenderer firstName="John" lastName="Doe" />
+        </Context.Provider>
+      );
+
+      expect(getByText('Name: John Doe')).toBeDefined();
+    });
+
+    it('should transform props with DefaultRenderer', () => {
+      type OriginalProps = { count: number };
+      type TransformedProps = { displayCount: string };
+
+      const DefaultTransformedRenderer = ({ displayCount }: TransformedProps) => <div>Count: {displayCount}</div>;
+
+      const { Context, DynamicRenderer } = createDynamicRenderer<OriginalProps, TransformedProps>({
+        contextName: 'Transform',
+        transformProps: (props) => ({ displayCount: `Value is ${props.count}` }),
+        DefaultRenderer: DefaultTransformedRenderer,
+      });
+
+      const getRenderer = () => undefined;
+
+      const { getByText } = render(
+        <Context.Provider value={{ getRenderer }}>
+          <DynamicRenderer count={42} />
+        </Context.Provider>
+      );
+
+      expect(getByText('Count: Value is 42')).toBeDefined();
+    });
+
+    it('should work without transformProps (pass through)', () => {
+      const { Context, DynamicRenderer } = createDynamicRenderer<TestProps>({
+        contextName: 'Test',
+      });
+
+      const getRenderer = () => RendererA;
+
+      const { getByText } = render(
+        <Context.Provider value={{ getRenderer }}>
+          <DynamicRenderer name="pass-through" value={100} />
+        </Context.Provider>
+      );
+
+      expect(getByText('Renderer A: pass-through - 100')).toBeDefined();
+    });
+
+    it('should handle complex prop transformations', () => {
+      type OriginalProps = {
+        users: string[];
+        prefix: string;
+      };
+      type TransformedProps = {
+        userList: string;
+      };
+
+      const ListRenderer = ({ userList }: TransformedProps) => <div>Users: {userList}</div>;
+
+      const { Context, DynamicRenderer } = createDynamicRenderer<OriginalProps, TransformedProps>({
+        contextName: 'Transform',
+        transformProps: (props) => ({
+          userList: props.users.map((u) => `${props.prefix}${u}`).join(', '),
+        }),
+      });
+
+      const getRenderer = () => ListRenderer;
+
+      const { getByText } = render(
+        <Context.Provider value={{ getRenderer }}>
+          <DynamicRenderer users={['Alice', 'Bob', 'Charlie']} prefix="@" />
+        </Context.Provider>
+      );
+
+      expect(getByText('Users: @Alice, @Bob, @Charlie')).toBeDefined();
+    });
+
+    it('should apply transformProps to dynamically selected renderer', () => {
+      type OriginalProps = { value: number };
+      type TransformedProps = { displayValue: string };
+
+      const HighRenderer = ({ displayValue }: TransformedProps) => <div>High: {displayValue}</div>;
+      const LowRenderer = ({ displayValue }: TransformedProps) => <div>Low: {displayValue}</div>;
+
+      const { Context, DynamicRenderer } = createDynamicRenderer<OriginalProps, TransformedProps>({
+        contextName: 'Transform',
+        transformProps: (props) => ({ displayValue: `#${props.value}` }),
+      });
+
+      const getRenderer = (props: OriginalProps) => (props.value > 50 ? HighRenderer : LowRenderer);
+
+      const { getByText, rerender } = render(
+        <Context.Provider value={{ getRenderer }}>
+          <DynamicRenderer value={75} />
+        </Context.Provider>
+      );
+
+      expect(getByText('High: #75')).toBeDefined();
+
+      rerender(
+        <Context.Provider value={{ getRenderer }}>
+          <DynamicRenderer value={25} />
+        </Context.Provider>
+      );
+
+      expect(getByText('Low: #25')).toBeDefined();
+    });
+  });
 });
