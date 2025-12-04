@@ -3,13 +3,14 @@ import type { ComponentType } from 'react';
 
 import createFlexibleContext from './createFlexibleContext';
 
-export type DynamicRendererContextType<Props> = {
-  getRenderer: (props: Props) => ComponentType<Props> | undefined;
+export type DynamicRendererContextType<Props, TransformedProps = Props> = {
+  getRenderer: (props: Props) => ComponentType<TransformedProps> | undefined;
 };
 
-export type CreateDynamicRendererOptions<Props> = {
+export type CreateDynamicRendererOptions<Props, TransformedProps = Props> = {
   contextName: string;
-  DefaultRenderer?: ComponentType<Props>;
+  transformProps?: (props: Props) => TransformedProps;
+  DefaultRenderer?: ComponentType<TransformedProps>;
 };
 
 /**
@@ -18,11 +19,11 @@ export type CreateDynamicRendererOptions<Props> = {
  * @param DefaultRenderer Default renderer component if none is found in context
  * @returns An object containing the context, dynamic renderer component, and constant provider creator.
  */
-export default function createDynamicRenderer<Props extends Record<string, unknown>>({
-  contextName,
-  DefaultRenderer,
-}: CreateDynamicRendererOptions<Props>) {
-  type ContextType = DynamicRendererContextType<Props>;
+export default function createDynamicRenderer<
+  Props extends Record<string, unknown>,
+  TransformedProps extends Record<string, unknown> = Props,
+>({ contextName, transformProps, DefaultRenderer }: CreateDynamicRendererOptions<Props, TransformedProps>) {
+  type ContextType = DynamicRendererContextType<Props, TransformedProps>;
   const { Context, useRequiredContext, createConstantProvider } = createFlexibleContext<ContextType>(undefined, {
     contextName,
     providerTag: `${contextName}Context.Provider`,
@@ -32,8 +33,9 @@ export default function createDynamicRenderer<Props extends Record<string, unkno
     const { getRenderer } = useRequiredContext();
     const Renderer = getRenderer(props) || DefaultRenderer;
     if (Renderer) {
+      const transformedProps = transformProps ? transformProps(props) : (props as unknown as TransformedProps);
       // eslint-disable-next-line react-hooks/static-components
-      return <Renderer {...props} />;
+      return <Renderer {...transformedProps} />;
     }
     return null;
   }
