@@ -1,7 +1,7 @@
 {
   "name": "@unblocks/eslint-config",
   "license": "Apache-2.0",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "dependencies": {
     "@eslint/eslintrc": "^3.3.3",
     "@dword-design/eslint-plugin-import-alias": "^6.0.3",
