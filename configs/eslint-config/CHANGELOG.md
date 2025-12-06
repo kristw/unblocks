@@ -1,5 +1,11 @@
 # @unblocks/eslint-config
 
+## 1.1.0
+
+### Minor Changes
+
+- 014425a: add eslint-config-prettier
+
 ## 1.0.0
 
 ### Major Changes
