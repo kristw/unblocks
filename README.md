@@ -16,7 +16,7 @@ Each package and app is 100% [TypeScript](https://www.typescriptlang.org/).
 |--------------|-----------|-------------|
 | [`@unblocks/react`](./packages//unblocks-react/) | ![npm](https://img.shields.io/npm/v/@unblocks/react) | Collection of React utilities |
 | [`@unblocks/react-svg`](./packages//unblocks-react-svg/) | ![npm](https://img.shields.io/npm/v/@unblocks/react-svg) | Collection of utilities for working with SVG in React |
-| [`@unblocks/registry`](./packages/unblocks-registry/) | ![npm](https://img.shields.io/npm/v/@unblocks/registry) | All-purpose map data structure that supports lazy loading (sync & async) |
+| [`@unblocks/registry`](./packages/unblocks-registry/) | ![npm](https://img.shields.io/npm/v/@unblocks/registry) | Map data structure with lazy loading (sync & async) |
 | [`@unblocks/types`](./packages/unblocks-types/) | ![npm](https://img.shields.io/npm/v/@unblocks/types) | Useful TypeScript types |
 | [`@unblocks/utils`](./packages/unblocks-utils/) | ![npm](https://img.shields.io/npm/v/@unblocks/utils) | A collection of utility functions and classes |
 | [`@unblocks/xyflow-react`](./packages/unblocks-xyflow-react/) | ![npm](https://img.shields.io/npm/v/@unblocks/xyflow-react) | Helpers for working with `@xyflow-react` and Dagre layout |
@@ -25,11 +25,11 @@ Each package and app is 100% [TypeScript](https://www.typescriptlang.org/).
 
 ### Shared configs
 
-| Package Name | Description |
-|--------------|-------------|
-| [`@unblocks/eslint-config`](./packages/config-eslint/) | ESLint configurations used throughout the monorepo |
-| [`@unblocks/jest-presets`](./packages/jest-presets/) | Jest configurations |
-| [`@unblocks/typescript-config`](./packages/config-typescript/) | tsconfig.json's used throughout the monorepo |
+| Package Name | | Description |
+|--------------|-----------|-------------|
+| [`@unblocks/eslint-config`](./packages/config-eslint/) | ![npm](https://img.shields.io/npm/v/@unblocks/eslint-config) | ESLint configurations used throughout the monorepo |
+| [`@unblocks/jest-presets`](./packages/jest-presets/) | ![npm](https://img.shields.io/npm/v/@unblocks/jest-presets) | Jest configurations |
+| [`@unblocks/typescript-config`](./packages/config-typescript/) | ![npm](https://img.shields.io/npm/v/@unblocks/typescript-config) | tsconfig.json's used throughout the monorepo |
 
 ## Development
 
