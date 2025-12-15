@@ -23,8 +23,8 @@
     "@unblocks/typescript-config": "*",
     "@unblocks/jest-presets": "*",
     "@babel/core": "^7.28.4",
-    "@storybook/addon-links": "^10.1.4",
-    "@storybook/nextjs": "^10.1.4",
+    "@storybook/addon-links": "^10.1.9",
+    "@storybook/nextjs": "^10.1.9",
     "@storybook/react": "^10.1.4",
     "@storybook/test": "^8.6.12",
     "@storybook/theming": "^8.6.12",
@@ -33,6 +33,6 @@
     "babel-loader": "^10.0.0",
     "storybook": "^10.1.4",
     "webpack": "^5.101.0",
-    "@storybook/addon-docs": "^10.1.4"
+    "@storybook/addon-docs": "^10.1.9"
   }
 }
