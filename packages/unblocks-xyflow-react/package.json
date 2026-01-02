@@ -49,9 +49,9 @@
     "@unblocks/jest-presets": "*",
     "@unblocks/types": "*",
     "@unblocks/typescript-config": "*",
-    "@types/react": "^19.1.8",
+    "@types/react": "^19.2.7",
     "@xyflow/react": "^12.5.5",
-    "react": "^19.0.0"
+    "react": "^19.2.3"
   },
   "publishConfig": {
     "access": "public"
