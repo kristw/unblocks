@@ -38,7 +38,7 @@
     "preset": "@unblocks/jest-presets/browser"
   },
   "dependencies": {
-    "@dagrejs/dagre": "^1.1.4"
+    "@dagrejs/dagre": "^2.0.3"
   },
   "peerDependencies": {
     "@xyflow/react": "^12.5.5",
