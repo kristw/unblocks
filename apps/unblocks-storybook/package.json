@@ -22,7 +22,7 @@
     "@unblocks/eslint-config": "*",
     "@unblocks/typescript-config": "*",
     "@unblocks/jest-presets": "*",
-    "@babel/core": "^7.28.6",
+    "@babel/core": "^7.29.0",
     "@storybook/addon-links": "^10.2.8",
     "@storybook/nextjs": "^10.2.8",
     "@storybook/react": "^10.1.4",
