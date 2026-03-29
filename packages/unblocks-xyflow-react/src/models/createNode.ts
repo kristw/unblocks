@@ -8,6 +8,7 @@ export function createNode<
 >({
   id,
   data,
+  type,
   draggable = false,
   position,
   sourcePosition = Position.Bottom,
@@ -17,10 +18,11 @@ export function createNode<
   return {
     id,
     data,
+    type,
     draggable,
     position: typeof position === 'undefined' ? { x: 0, y: 0 } : position,
     sourcePosition,
     targetPosition,
     ...rest,
-  } as Node<NodeData, NodeType>;
+  } as unknown as Node<NodeData, NodeType>;
 }
