@@ -22,5 +22,5 @@ export function createNode<
     sourcePosition,
     targetPosition,
     ...rest,
-  };
+  } as Node<NodeData, NodeType>;
 }
