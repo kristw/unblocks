@@ -8,7 +8,8 @@ import pluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 import pluginReact from 'eslint-plugin-react';
 import pluginReactHooks from 'eslint-plugin-react-hooks';
 import pluginSimpleImportSort from 'eslint-plugin-simple-import-sort';
-import pluginStorybook from 'eslint-plugin-storybook'
+import pluginStorybook from 'eslint-plugin-storybook';
+import { fixupPluginRules } from '@eslint/compat';
 
 const project = resolve(process.cwd(), 'tsconfig.json');
 
@@ -18,7 +19,7 @@ export default tseslint.config(
     ignores: [
       'tsup.config.ts',
       'eslint.config.mjs',
-      '.*.js',        // dotfiles
+      '.*.js', // dotfiles
       '**/*.css',
       'node_modules/',
       'dist/',
@@ -47,13 +48,13 @@ export default tseslint.config(
 
   // React + JSX support
   {
-    files: ['**/*.{js,jsx,cjs,mjs,ts,tsx}', "**/*.test.{js,jsx,ts,tsx}"],
+    files: ['**/*.{js,jsx,cjs,mjs,ts,tsx}', '**/*.test.{js,jsx,ts,tsx}'],
     languageOptions: {
       parserOptions: {
         ecmaFeatures: {
           jsx: true,
         },
-        projectService: true,  // automatically handles tsconfig.json
+        projectService: true, // automatically handles tsconfig.json
         tsconfigRootDir: process.cwd(),
       },
       globals: {
@@ -69,7 +70,7 @@ export default tseslint.config(
       },
     },
     plugins: {
-      react: pluginReact,
+      react: fixupPluginRules(pluginReact),
       'react-hooks': pluginReactHooks,
       'simple-import-sort': pluginSimpleImportSort,
     },
@@ -97,14 +98,14 @@ export default tseslint.config(
         'error',
         {
           groups: [
-            ['^react$', '^next', '^[a-z]'],  // react, next, then normal packages
-            ['^@[A-Za-z]'],                  // @xxx
-            ['^@'],                          // @
-            ['^~'],                          // ~
+            ['^react$', '^next', '^[a-z]'], // react, next, then normal packages
+            ['^@[A-Za-z]'], // @xxx
+            ['^@'], // @
+            ['^~'], // ~
             ['^\\.\\.(?!/?$)', '^\\.\\./?$'], // ../
             ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'], // ./
-            ['^.+\\.s?css$'],                // styles
-            ['^\\u0000'],                    // side effect imports
+            ['^.+\\.s?css$'], // styles
+            ['^\\u0000'], // side effect imports
           ],
         },
       ],
