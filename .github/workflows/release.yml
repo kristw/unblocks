@@ -7,6 +7,10 @@ on:
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
+permissions:
+  id-token: write  # Required for OIDC
+  contents: write
+
 jobs:
   release:
     name: Release
@@ -17,12 +21,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
-      - name: Setup Node.js 20.x
-        uses: actions/setup-node@v4
+      - name: Setup Node.js 22.x
+        uses: actions/setup-node@v6
         with:
-          node-version: 20.x
+          node-version: 22.x
           cache: 'npm'
 
       - name: Install Dependencies
@@ -44,11 +48,10 @@ jobs:
         id: changesets
         uses: changesets/action@v1
         with:
-          title: "release: update versions and publish packages"
+          title: 'release: update versions and publish packages'
           publish: npm run auto-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Shout if a publish happens
         if: steps.changesets.outputs.published == 'true'
