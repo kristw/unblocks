@@ -15,7 +15,7 @@
     "eslint-plugin-only-warn": "^1.1.0",
     "eslint-plugin-prettier": "^5.5.5",
     "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-hooks": "7.1.0-canary-9627b5a1-20260327",
+    "eslint-plugin-react-hooks": "7.1.0-canary-52684925-20251110",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "eslint-plugin-storybook": "^10.3.3",
     "globals": "^17.4.0",
