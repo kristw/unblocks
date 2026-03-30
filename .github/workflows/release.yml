@@ -9,7 +9,7 @@ concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 permissions:
   id-token: write  # Required for OIDC
-  contents: read
+  contents: write
 
 jobs:
   release:
@@ -52,7 +52,6 @@ jobs:
           publish: npm run auto-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Shout if a publish happens
         if: steps.changesets.outputs.published == 'true'
