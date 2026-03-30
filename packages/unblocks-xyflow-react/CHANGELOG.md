@@ -1,5 +1,11 @@
 # @unblocks/template
 
+## 0.5.0
+
+### Minor Changes
+
+- f472208: make eslint-config support eslint 10
+
 ## 0.4.0
 
 ### Minor Changes
