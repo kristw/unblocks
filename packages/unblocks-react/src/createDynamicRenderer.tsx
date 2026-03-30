@@ -35,7 +35,7 @@ export default function createDynamicRenderer<
     const Renderer = getRenderer(props) || DefaultRenderer;
     if (Renderer) {
       const transformedProps = transformProps ? transformProps(props) : (props as unknown as TransformedProps);
-      // eslint-disable-next-line react-hooks/static-components
+
       return <Renderer {...transformedProps} />;
     }
     return null;
