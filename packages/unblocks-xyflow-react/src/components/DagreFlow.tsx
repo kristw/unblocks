@@ -40,11 +40,11 @@ export default function DagreFlow({ graph, dagreOptions, children, ...restProps 
     if (nodesInitialized) {
       if (!isInitialized.current) {
         const newNodes = dagreLayout(nodes, graph.edges, dagreOptions).nodes;
-        // eslint-disable-next-line react-hooks/set-state-in-effect
         setLayoutedNodes(newNodes.concat());
         isInitialized.current = true;
       }
     } else {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setLayoutedNodes(nodes.concat());
       isInitialized.current = false;
     }
