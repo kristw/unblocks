@@ -23,14 +23,14 @@
     "@unblocks/typescript-config": "*",
     "@unblocks/jest-presets": "*",
     "@babel/core": "^7.29.0",
-    "@storybook/addon-links": "^10.2.19",
-    "@storybook/nextjs": "^10.2.19",
+    "@storybook/addon-links": "^10.3.4",
+    "@storybook/nextjs": "^10.3.4",
     "@storybook/react": "^10.1.4",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.2",
     "babel-loader": "^10.0.0",
     "storybook": "^10.1.4",
     "webpack": "^5.104.1",
-    "@storybook/addon-docs": "^10.2.19"
+    "@storybook/addon-docs": "^10.3.4"
   }
 }
