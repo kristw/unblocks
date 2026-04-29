@@ -45,7 +45,7 @@
     "@unblocks/jest-presets": "*",
     "@unblocks/typescript-config": "*",
     "@types/react": "^19.2.9",
-    "react": "^19.0.0"
+    "react": "^19.2.5"
   },
   "publishConfig": {
     "access": "public"
