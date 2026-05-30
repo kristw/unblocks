@@ -15,22 +15,22 @@
   "dependencies": {
     "@unblocks/xyflow-react": "*",
     "@xyflow/react": "^12.5.5",
-    "react": "^19.1.0",
-    "react-dom": "^19.2.3"
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6"
   },
   "devDependencies": {
-    "@unblocks/eslint-config": "*",
-    "@unblocks/typescript-config": "*",
-    "@unblocks/jest-presets": "*",
     "@babel/core": "^7.29.0",
-    "@storybook/addon-links": "^10.3.6",
-    "@storybook/nextjs": "^10.3.6",
-    "@storybook/react": "^10.1.4",
+    "@storybook/addon-docs": "^10.4.1",
+    "@storybook/addon-links": "^10.4.1",
+    "@storybook/nextjs": "^10.4.1",
+    "@storybook/react": "^10.4.1",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.2",
+    "@unblocks/eslint-config": "*",
+    "@unblocks/jest-presets": "*",
+    "@unblocks/typescript-config": "*",
     "babel-loader": "^10.0.0",
-    "storybook": "^10.1.4",
-    "webpack": "^5.106.2",
-    "@storybook/addon-docs": "^10.3.6"
+    "storybook": "^10.4.1",
+    "webpack": "^5.106.2"
   }
 }

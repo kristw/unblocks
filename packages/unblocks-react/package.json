@@ -41,11 +41,11 @@
     "@unblocks/registry": "^1.0.4"
   },
   "devDependencies": {
+    "@types/react": "^19.2.15",
     "@unblocks/eslint-config": "*",
     "@unblocks/jest-presets": "*",
     "@unblocks/typescript-config": "*",
-    "@types/react": "^19.2.9",
-    "react": "^19.0.0"
+    "react": "^19.2.6"
   },
   "publishConfig": {
     "access": "public"
