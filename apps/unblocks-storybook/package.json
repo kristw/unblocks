@@ -34,7 +34,7 @@
     "webpack": "^5.106.2"
   },
   "optionalDependencies": {
-    "@oxc-parser/binding-linux-x64-gnu": "0.127.0",
+    "@oxc-parser/binding-linux-x64-gnu": "0.137.0",
     "@oxc-resolver/binding-linux-x64-gnu": "11.20.0"
   }
 }
