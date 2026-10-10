@@ -1,35 +1,44 @@
-# To get started with Dependabot version updates, you'll need to specify which
-# package ecosystems to update and where the package manifests are located.
-# Please see the documentation for all configuration options:
-# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+# Dependabot version updates.
+# - All minor/patch npm bumps arrive as ONE grouped PR each week, so merging it
+#   can't leave sibling PRs conflicting on package-lock.json.
+# - Major bumps come as separate PRs (related ecosystems grouped) for manual review.
+# - Non-major PRs are merged automatically once CI passes (see the
+#   dependabot-automerge job in the CI workflow).
+# npm workspaces are handled from the root, so only "/" is listed.
 
 version: 2
 updates:
   - package-ecosystem: "npm"
-    directories: 
-      - "/"
-      - "/configs/eslint-config"
-      - "/configs/jest-presets"
-      - "/configs/typescript-config"
+    directory: "/"
     schedule:
       interval: "weekly"
+      day: "monday"
+      time: "06:00"
+      timezone: "America/Los_Angeles"
+    open-pull-requests-limit: 10
     groups:
-      storybook-deps:
-        dependency-type: "development"
+      npm-minor-patch:
+        update-types: ["minor", "patch"]
+        patterns: ["*"]
+      storybook-major:
+        update-types: ["major"]
         patterns:
           - "storybook"
           - "@storybook/*"
           - "@chakra-ui/storybook-addon"
-      eslint-deps:
-        dependency-type: "development"
+      eslint-major:
+        update-types: ["major"]
         patterns:
+          - "eslint"
           - "eslint-*"
           - "*eslint-plugin*"
+          - "@eslint/*"
           - "@typescript-eslint/*"
+          - "typescript-eslint"
           - "prettier"
           - "@types/prettier"
-      jest-deps:
-        dependency-type: "development"
+      jest-major:
+        update-types: ["major"]
         patterns:
           - "jest*"
           - "@types/jest"

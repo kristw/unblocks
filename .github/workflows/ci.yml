@@ -48,3 +48,25 @@ jobs:
         uses: codecov/codecov-action@v4.2.0
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
+
+  # Merge Dependabot's non-major PRs once the build above passes.
+  # Major bumps are left open for manual review.
+  dependabot-automerge:
+    name: Dependabot auto-merge
+    needs: build
+    if: github.event_name == 'pull_request' && github.event.pull_request.user.login == 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Fetch Dependabot metadata
+        id: meta
+        uses: dependabot/fetch-metadata@v3
+
+      - name: Merge non-major update
+        if: steps.meta.outputs.update-type != 'version-update:semver-major'
+        run: gh pr merge --squash --delete-branch "$PR_URL"
+        env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
