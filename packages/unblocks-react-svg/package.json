@@ -33,7 +33,10 @@
     "test": "jest --coverage"
   },
   "jest": {
-    "preset": "@unblocks/jest-presets/browser"
+    "preset": "@unblocks/jest-presets/browser",
+    "moduleNameMapper": {
+      "^uuid$": "<rootDir>/test/mocks/uuid.js"
+    }
   },
   "dependencies": {
     "uuid": "^14.0.2"
