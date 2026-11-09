@@ -14,15 +14,15 @@
   },
   "dependencies": {
     "@unblocks/xyflow-react": "*",
-    "@xyflow/react": "^12.12.0",
+    "@xyflow/react": "^12.12.1",
     "react": "^19.2.6",
     "react-dom": "^19.3.1"
   },
   "devDependencies": {
-    "@babel/core": "^8.0.10",
-    "@storybook/addon-docs": "^10.6.5",
-    "@storybook/addon-links": "^10.6.5",
-    "@storybook/nextjs": "^10.6.5",
+    "@babel/core": "^8.1.0",
+    "@storybook/addon-docs": "^10.6.6",
+    "@storybook/addon-links": "^10.6.6",
+    "@storybook/nextjs": "^10.6.6",
     "@storybook/react": "^10.4.1",
     "@testing-library/jest-dom": "^7.0.1",
     "@testing-library/react": "^16.3.3",
@@ -34,7 +34,7 @@
     "webpack": "^5.112.2"
   },
   "optionalDependencies": {
-    "@oxc-parser/binding-linux-x64-gnu": "0.156.0",
+    "@oxc-parser/binding-linux-x64-gnu": "0.157.0",
     "@oxc-resolver/binding-linux-x64-gnu": "11.24.2"
   }
 }
